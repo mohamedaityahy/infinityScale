@@ -19,9 +19,8 @@ const Landing = () => {
         <div className="container">
           <div className="nav-brand">
             <div className="logo">
-              <span>∞</span>
+              <img src="/logo.svg" alt="infinityScale" />
             </div>
-            <h2>InfinityScale</h2>
           </div>
           
           <nav className={`nav ${isMenuOpen ? 'nav-open' : ''}`}>
@@ -50,7 +49,7 @@ const Landing = () => {
           <div className="hero-content">
             <div className="hero-text">
               <div className="hero-badge">
-                <Star size={16} />
+                <img src="/icon.svg" alt="icon" className='icon'/>
                 <span>الوكالة الرائدة في تطوير المواقع</span>
               </div>
               
@@ -93,7 +92,7 @@ const Landing = () => {
             </div>
             
             <div className="hero-image">
-              <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&h=600&fit=crop" alt="Professional web development" />
+              <img src="/slidImg.png" alt="Professional web development" />
               <div className="floating-card">
                 <div className="card-icon">
                   <TrendingUp size={24} />
@@ -209,7 +208,7 @@ const Landing = () => {
                 <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&h=400&fit=crop&crop=face" alt="أحمد الحسني" />
                 <div>
                   <h4>أحمد الحسني</h4>
-                  <span>مؤسس متجر تكنو برو - الدار البيضاء</span>
+                  <span>مؤسس متجر تكنو برو -أكادير</span>
                 </div>
               </div>
             </div>
@@ -227,7 +226,7 @@ const Landing = () => {
               </div>
               <p>تطبيق الويب الذي بناه لنا InfinityScale حول طريقة عمل شركتنا تماماً. أصبحت العمليات أكثر كفاءة والعملاء أكثر رضا.</p>
               <div className="author">
-                <img src="https://images.unsplash.com/photo-1494790108755-2616b612b786?w=400&h=400&fit=crop&crop=face" alt="فاطمة بنعلي" />
+                <img src="/revImg.png" alt="فاطمة بنعلي" />
                 <div>
                   <h4>فاطمة بنعلي</h4>
                   <span>مديرة شركة الخدمات اللوجستية - الرباط</span>
@@ -274,9 +273,9 @@ const Landing = () => {
               <ArrowLeft size={20} />
             </button>
             <div className="contact-info">
-              <a href="tel:212655889999">
+              <a href="tel:709130391">
                 <Phone size={16} />
-                212-655-889-999
+                212-709130391
               </a>
               <a href="mailto:hello@infinityscale.ma">
                 <Mail size={16} />
@@ -335,7 +334,7 @@ const Landing = () => {
                 </div>
                 <div>
                   <MapPin size={16} />
-                  الدار البيضاء، المملكة المغربية
+                 أكادير، المملكة المغربية
                 </div>
               </div>
             </div>
