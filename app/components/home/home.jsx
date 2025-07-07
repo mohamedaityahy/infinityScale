@@ -1,10 +1,16 @@
+
 'use client'
 import React, { useState } from 'react';
-import { Menu, X, Star, ArrowLeft, Play, Stethoscope, Scale, ShoppingCart, TrendingUp, CheckCircle, ArrowUpRight, Quote, Phone, Mail, MapPin, Twitter, Linkedin, Instagram } from 'lucide-react';
+import { Menu, X, Star, ArrowLeft, Play, Globe, Zap, Smartphone, TrendingUp, CheckCircle, ArrowUpRight, Quote, Phone, Mail, MapPin, Twitter, Linkedin, Instagram } from 'lucide-react';
 import './home.css';
+import OrderFormPopup from './orderForm';
 
 const Landing = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isPopupOpen, setIsPopupOpen] = useState(false);
+
+  const openPopup = () => setIsPopupOpen(true);
+  const closePopup = () => setIsPopupOpen(false);
 
   return (
     <div className="home">
@@ -26,7 +32,7 @@ const Landing = () => {
           
           <div className="header-actions">
             <button className="btn-secondary">تسجيل الدخول</button>
-            <button className="btn-primary">ابدأ مجاناً</button>
+            <button className="btn-primary" onClick={openPopup}>إنشاء طلب</button>
           </div>
           
           <button 
@@ -45,23 +51,23 @@ const Landing = () => {
             <div className="hero-text">
               <div className="hero-badge">
                 <Star size={16} />
-                <span>الوكالة الرائدة في المملكة</span>
+                <span>الوكالة الرائدة في تطوير المواقع</span>
               </div>
               
               <h1 className="hero-title">
-                حول عملك إلى
-                <span className="highlight"> نجاح لا محدود </span>
-                مع InfinityScale
+                نحول أفكارك إلى
+                <span className="highlight"> مواقع ويب استثنائية </span>
+                تحقق النتائج
               </h1>
               
               <p className="hero-subtitle">
-                نساعد الأطباء والمحامين وأصحاب المتاجر الإلكترونية في بناء حضور رقمي قوي 
-                وتحقيق نمو مستدام من خلال مواقع ويب احترافية وحملات إعلانية مدروسة
+                نخصص في تطوير مواقع ويب حديثة وتطبيقات متقدمة تساعد الشركات على النمو والازدهار في العالم الرقمي. 
+                من المتاجر الإلكترونية إلى المنصات المؤسسية، نقدم حلولاً تقنية متكاملة تلبي احتياجاتك
               </p>
               
               <div className="hero-actions">
-                <button className="btn-primary large">
-                  احجز استشارة مجانية
+                <button className="btn-primary large" onClick={openPopup}>
+                  إنشاء طلب
                   <ArrowLeft size={20} />
                 </button>
                 <button className="btn-outline large">
@@ -72,29 +78,29 @@ const Landing = () => {
               
               <div className="hero-stats">
                 <div className="stat">
-                  <div className="stat-number">500+</div>
+                  <div className="stat-number">200+</div>
                   <div className="stat-label">مشروع ناجح</div>
                 </div>
                 <div className="stat">
-                  <div className="stat-number">98%</div>
+                  <div className="stat-number">99%</div>
                   <div className="stat-label">رضا العملاء</div>
                 </div>
                 <div className="stat">
-                  <div className="stat-number">200%</div>
-                  <div className="stat-label">زيادة في الأرباح</div>
+                  <div className="stat-number">5x</div>
+                  <div className="stat-label">نمو الأعمال</div>
                 </div>
               </div>
             </div>
             
             <div className="hero-image">
-              <img src="https://images.unsplash.com/photo-1649972904349-6e44c42644a7?w=600&h=600&fit=crop" alt="Professional workspace" />
+              <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&h=600&fit=crop" alt="Professional web development" />
               <div className="floating-card">
                 <div className="card-icon">
                   <TrendingUp size={24} />
                 </div>
                 <div className="card-content">
-                  <div className="card-number">+250%</div>
-                  <div className="card-text">زيادة في الأرباح</div>
+                  <div className="card-number">+300%</div>
+                  <div className="card-text">نمو الأعمال</div>
                 </div>
               </div>
             </div>
@@ -106,21 +112,21 @@ const Landing = () => {
       <section id="services" className="services">
         <div className="container">
           <div className="section-header">
-            <h2>حلولنا الرقمية المتطورة</h2>
-            <p>نقدم خدمات شاملة مصممة لتحقيق النمو اللا محدود لعملك</p>
+            <h2>خدماتنا المتميزة في التطوير</h2>
+            <p>نقدم حلولاً تقنية شاملة ومبتكرة تساعد عملك على التفوق والنمو في البيئة الرقمية</p>
           </div>
           
           <div className="services-grid">
             <div className="service-card">
               <div className="service-icon blue">
-                <Stethoscope size={28} />
+                <Globe size={28} />
               </div>
-              <h3>المواقع الطبية الاحترافية</h3>
-              <p>مواقع ويب متقدمة للأطباء والعيادات تعزز الثقة مع المرضى وتبسط عملية الحجز</p>
+              <h3>مواقع الويب الاحترافية</h3>
+              <p>مواقع ويب سريعة ومتجاوبة مع جميع الأجهزة، مصممة لتحقيق أعلى معدلات التحويل وتجربة مستخدم استثنائية</p>
               <ul>
-                <li><CheckCircle size={16} /> تصميم يعكس الاحترافية الطبية</li>
-                <li><CheckCircle size={16} /> نظام حجز مواعيد ذكي</li>
-                <li><CheckCircle size={16} /> تجربة مستخدم متميزة</li>
+                <li><CheckCircle size={16} /> تصميم عصري ومتجاوب</li>
+                <li><CheckCircle size={16} /> تحسين محركات البحث (SEO)</li>
+                <li><CheckCircle size={16} /> سرعة تحميل فائقة</li>
               </ul>
               <button className="service-btn">
                 اعرف المزيد <ArrowUpRight size={16} />
@@ -129,14 +135,14 @@ const Landing = () => {
             
             <div className="service-card">
               <div className="service-icon orange">
-                <Scale size={28} />
+                <Zap size={28} />
               </div>
-              <h3>منصات المكاتب القانونية</h3>
-              <p>حلول رقمية متطورة تبرز خبرتك القانونية وتجذب العملاء الذين يقدرون الثقة والكفاءة</p>
+              <h3>تطبيقات الويب المتقدمة</h3>
+              <p>تطبيقات ويب تفاعلية قوية مبنية بأحدث التقنيات لتوفير تجربة مستخدم سلسة وأداء متميز</p>
               <ul>
-                <li><CheckCircle size={16} /> عرض احترافي للخدمات القانونية</li>
-                <li><CheckCircle size={16} /> نماذج استشارة آمنة ومحمية</li>
-                <li><CheckCircle size={16} /> محتوى يبني السمعة والمصداقية</li>
+                <li><CheckCircle size={16} /> تقنيات حديثة (React, Node.js)</li>
+                <li><CheckCircle size={16} /> واجهات تفاعلية متطورة</li>
+                <li><CheckCircle size={16} /> أمان وموثوقية عالية</li>
               </ul>
               <button className="service-btn">
                 اعرف المزيد <ArrowUpRight size={16} />
@@ -145,14 +151,14 @@ const Landing = () => {
             
             <div className="service-card">
               <div className="service-icon green">
-                <ShoppingCart size={28} />
+                <Smartphone size={28} />
               </div>
-              <h3>متاجر إلكترونية متقدمة</h3>
-              <p>منصات تجارة إلكترونية عالية التحويل تزيد من مبيعاتك وتوسع نطاق عملك</p>
+              <h3>المتاجر الإلكترونية</h3>
+              <p>منصات تجارة إلكترونية محسنة للمبيعات مع أنظمة دفع آمنة وإدارة متقدمة للمنتجات والطلبات</p>
               <ul>
-                <li><CheckCircle size={16} /> تصميم محفز للشراء</li>
-                <li><CheckCircle size={16} /> حلول دفع متنوعة وآمنة</li>
-                <li><CheckCircle size={16} /> إدارة ذكية للمنتجات</li>
+                <li><CheckCircle size={16} /> أنظمة دفع متعددة وآمنة</li>
+                <li><CheckCircle size={16} /> إدارة شاملة للمخزون</li>
+                <li><CheckCircle size={16} /> تقارير مبيعات تفصيلية</li>
               </ul>
               <button className="service-btn">
                 اعرف المزيد <ArrowUpRight size={16} />
@@ -163,12 +169,12 @@ const Landing = () => {
               <div className="service-icon purple">
                 <TrendingUp size={28} />
               </div>
-              <h3>الحملات الإعلانية المستهدفة</h3>
-              <p>استراتيجيات إعلانية مدروسة تحقق أقصى عائد على الاستثمار وتجذب العملاء المناسبين</p>
+              <h3>التسويق الرقمي والإعلانات</h3>
+              <p>حملات تسويق رقمي مدروسة وإعلانات مستهدفة لزيادة الوصول وتحقيق أفضل عائد على الاستثمار</p>
               <ul>
-                <li><CheckCircle size={16} /> استهداف دقيق ومتقدم</li>
-                <li><CheckCircle size={16} /> تحليل وتحسين مستمر</li>
-                <li><CheckCircle size={16} /> تقارير شفافة ومفصلة</li>
+                <li><CheckCircle size={16} /> إعلانات جوجل وفيسبوك</li>
+                <li><CheckCircle size={16} /> تحليل البيانات والأداء</li>
+                <li><CheckCircle size={16} /> استراتيجيات تسويق محتوى</li>
               </ul>
               <button className="service-btn">
                 اعرف المزيد <ArrowUpRight size={16} />
@@ -183,7 +189,7 @@ const Landing = () => {
         <div className="container">
           <div className="section-header">
             <h2>قصص نجاح عملائنا</h2>
-            <p>اكتشف كيف حققنا نتائج استثنائية لعملائنا في مختلف القطاعات</p>
+            <p>اكتشف كيف ساعدنا عملاءنا في تحقيق أهدافهم الرقمية وتنمية أعمالهم</p>
           </div>
           
           <div className="testimonials-grid">
@@ -198,12 +204,12 @@ const Landing = () => {
                 <Star size={16} fill="currentColor" />
                 <Star size={16} fill="currentColor" />
               </div>
-              <p>مع InfinityScale، تحول موقعي الطبي إلى أداة تسويق قوية. زادت حجوزات المرضى بنسبة 250% والتصميم يعكس مستوى عيادتي المتميز.</p>
+              <p>فريق InfinityScale طور لنا متجراً إلكترونياً متقدماً زاد من مبيعاتنا بنسبة 400%. الموقع سريع وسهل الاستخدام وجودة التصميم رائعة.</p>
               <div className="author">
-                <img src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=400&h=400&fit=crop&crop=face" alt="د. محمد العلي" />
+                <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&h=400&fit=crop&crop=face" alt="أحمد الحسني" />
                 <div>
-                  <h4>د. محمد العلي</h4>
-                  <span>استشاري جراحة القلب - الرياض</span>
+                  <h4>أحمد الحسني</h4>
+                  <span>مؤسس متجر تكنو برو - الدار البيضاء</span>
                 </div>
               </div>
             </div>
@@ -219,12 +225,12 @@ const Landing = () => {
                 <Star size={16} fill="currentColor" />
                 <Star size={16} fill="currentColor" />
               </div>
-              <p>الحملات الإعلانية التي نفذها فريق InfinityScale جلبت لمكتبي قضايا عالية القيمة. النتائج فاقت كل توقعاتي والعائد كان استثنائياً.</p>
+              <p>تطبيق الويب الذي بناه لنا InfinityScale حول طريقة عمل شركتنا تماماً. أصبحت العمليات أكثر كفاءة والعملاء أكثر رضا.</p>
               <div className="author">
-                <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop&crop=face" alt="المحامي أحمد السعيد" />
+                <img src="https://images.unsplash.com/photo-1494790108755-2616b612b786?w=400&h=400&fit=crop&crop=face" alt="فاطمة بنعلي" />
                 <div>
-                  <h4>المحامي أحمد السعيد</h4>
-                  <span>مؤسس مكتب السعيد للمحاماة - جدة</span>
+                  <h4>فاطمة بنعلي</h4>
+                  <span>مديرة شركة الخدمات اللوجستية - الرباط</span>
                 </div>
               </div>
             </div>
@@ -240,12 +246,12 @@ const Landing = () => {
                 <Star size={16} fill="currentColor" />
                 <Star size={16} fill="currentColor" />
               </div>
-              <p>متجري الإلكتروني أصبح يحقق أرباحاً تفوق متجري التقليدي بـ3 أضعاف. فريق InfinityScale فهم رؤيتي وحولها لواقع رقمي مربح.</p>
+              <p>موقعنا الجديد جلب لنا عملاء جدد من جميع أنحاء المغرب. التصميم احترافي والموقع يظهر في النتائج الأولى لجوجل.</p>
               <div className="author">
-                <img src="https://images.unsplash.com/photo-1494790108755-2616b612b786?w=400&h=400&fit=crop&crop=face" alt="سارة المطيري" />
+                <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop&crop=face" alt="يوسف العمراني" />
                 <div>
-                  <h4>سارة المطيري</h4>
-                  <span>مؤسسة متجر الأناقة الراقية</span>
+                  <h4>يوسف العمراني</h4>
+                  <span>مدير وكالة العقارات الذهبية - مراكش</span>
                 </div>
               </div>
             </div>
@@ -259,22 +265,22 @@ const Landing = () => {
           <div className="cta-content">
             <div className="cta-badge">
               <TrendingUp size={16} />
-              ابدأ رحلتك نحو النجاح
+              ابدأ مشروعك اليوم
             </div>
-            <h2>هل أنت مستعد للنمو اللا محدود؟</h2>
-            <p>انضم إلى مئات العملاء الذين حققوا نجاحاً استثنائياً مع InfinityScale</p>
-            <button className="btn-primary large">
-              احجز استشارة مجانية الآن
+            <h2>هل أنت مستعد لتطوير موقعك؟</h2>
+            <p>انضم إلى مئات العملاء الذين اختاروا InfinityScale لتطوير مشاريعهم الرقمية وحققوا نجاحاً باهراً</p>
+            <button className="btn-primary large" onClick={openPopup}>
+              إنشاء طلب
               <ArrowLeft size={20} />
             </button>
             <div className="contact-info">
-              <a href="tel:966558889999">
+              <a href="tel:212655889999">
                 <Phone size={16} />
-                966-55-888-9999
+                212-655-889-999
               </a>
-              <a href="mailto:hello@infinityscale.sa">
+              <a href="mailto:hello@infinityscale.ma">
                 <Mail size={16} />
-                hello@infinityscale.sa
+                hello@infinityscale.ma
               </a>
             </div>
           </div>
@@ -292,7 +298,7 @@ const Landing = () => {
                 </div>
                 <h3>InfinityScale</h3>
               </div>
-              <p>شريكك في تحقيق النمو الرقمي اللا محدود وبناء مستقبل مزدهر لعملك</p>
+              <p>شريكك المثالي في تطوير الحلول الرقمية المبتكرة. نحول أفكارك إلى مواقع ويب وتطبيقات ناجحة</p>
               <div className="social-links">
                 <a href="#">
                   <Twitter size={20} />
@@ -309,10 +315,10 @@ const Landing = () => {
             <div className="footer-section">
               <h4>خدماتنا</h4>
               <ul>
-                <li><a href="#services">المواقع الطبية</a></li>
-                <li><a href="#services">المكاتب القانونية</a></li>
+                <li><a href="#services">تطوير المواقع</a></li>
+                <li><a href="#services">تطبيقات الويب</a></li>
                 <li><a href="#services">المتاجر الإلكترونية</a></li>
-                <li><a href="#services">الحملات الإعلانية</a></li>
+                <li><a href="#services">التسويق الرقمي</a></li>
               </ul>
             </div>
             
@@ -321,15 +327,15 @@ const Landing = () => {
               <div className="contact-details">
                 <div>
                   <Phone size={16} />
-                  966-55-888-9999
+                  212-655-889-999
                 </div>
                 <div>
                   <Mail size={16} />
-                  hello@infinityscale.sa
+                  hello@infinityscale.ma
                 </div>
                 <div>
                   <MapPin size={16} />
-                  الرياض، المملكة العربية السعودية
+                  الدار البيضاء، المملكة المغربية
                 </div>
               </div>
             </div>
@@ -340,6 +346,8 @@ const Landing = () => {
           </div>
         </div>
       </footer>
+
+      <OrderFormPopup isOpen={isPopupOpen} onClose={closePopup} />
     </div>
   );
 };
