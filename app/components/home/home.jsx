@@ -293,9 +293,8 @@ const Landing = () => {
             <div className="footer-section">
               <div className="footer-brand">
                 <div className="logo">
-                  <span>∞</span>
+                <img src="/logo.svg" alt="infinityScale" />
                 </div>
-                <h3>InfinityScale</h3>
               </div>
               <p>شريكك المثالي في تطوير الحلول الرقمية المبتكرة. نحول أفكارك إلى مواقع ويب وتطبيقات ناجحة</p>
               <div className="social-links">
