@@ -2,5 +2,5 @@
   "version": 3,
   "sources": [],
   "sections": [
-    {"offset": {"line": 1, "column": 0}, "map": {"version":3,"sources":["turbopack:///[project]/app/globals.css"],"sourcesContent":["\r\n* {\r\n  box-sizing: border-box;\r\n  padding: 0;\r\n  margin: 0;\r\n}\r\n\r\na {\r\n  color: inherit;\r\n  text-decoration: none;\r\n}\r\n"],"names":[],"mappings":"AACA;;;;;;AAMA"}}]
+    {"offset": {"line": 1, "column": 0}, "map": {"version":3,"sources":["turbopack:///[project]/app/globals.css"],"sourcesContent":["\r\n* {\r\n  box-sizing: border-box;\r\n  padding: 0;\r\n  margin: 0;\r\n  font-family: var(--font-cairo), sans-serif;\r\n}\r\n\r\na {\r\n  color: inherit;\r\n  text-decoration: none;\r\n}\r\n\r\n::-webkit-scrollbar {\r\n  width: 5px; \r\n}\r\n\r\n::-webkit-scrollbar-track {\r\n  background-color: #f1f1f1; \r\n}\r\n\r\n::-webkit-scrollbar-thumb {\r\n  background-color: #8a3aff; \r\n  border-radius: 10px; \r\n}\r\n\r\n::-webkit-scrollbar-thumb:hover {\r\n  background-color: #7a2cce; \r\n}\r\n"],"names":[],"mappings":"AACA;;;;;;;AAOA;;;;;AAKA;;;;AAIA;;;;AAIA;;;;;AAKA"}}]
 }

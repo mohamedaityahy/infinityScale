@@ -1,16 +1,14 @@
-
 'use client'
 import React, { useState } from 'react';
 import { Menu, X, Star, ArrowLeft, Play, Globe, Zap, Smartphone, TrendingUp, CheckCircle, ArrowUpRight, Quote, Phone, Mail, MapPin, Twitter, Linkedin, Instagram } from 'lucide-react';
 import './home.css';
-import OrderFormPopup from './orderForm';
+import OrderFormPopup from '../form/orderForm';
+import PortfolioPopup from '../PortfolioPopup/PortfolioPopup';
 
 const Landing = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [isPopupOpen, setIsPopupOpen] = useState(false);
-
-  const openPopup = () => setIsPopupOpen(true);
-  const closePopup = () => setIsPopupOpen(false);
+  const [isOrderFormOpen, setIsOrderFormOpen] = useState(false); // ✅ Fixed: renamed for clarity
+  const [isPortfolioOpen, setIsPortfolioOpen] = useState(false);
 
   return (
     <div className="home">
@@ -22,18 +20,15 @@ const Landing = () => {
               <img src="/logo.svg" alt="infinityScale" />
             </div>
           </div>
-          
           <nav className={`nav ${isMenuOpen ? 'nav-open' : ''}`}>
             <a href="#services">خدماتنا</a>
             <a href="#testimonials">آراء العملاء</a>
             <a href="#contact">اتصل بنا</a>
           </nav>
-          
           <div className="header-actions">
             <button className="btn-secondary">تسجيل الدخول</button>
-            <button className="btn-primary" onClick={openPopup}>إنشاء طلب</button>
+            <button className="btn-primary" onClick={() => setIsOrderFormOpen(true)}>إنشاء طلب</button>
           </div>
-          
           <button 
             className="menu-toggle"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
@@ -52,29 +47,25 @@ const Landing = () => {
                 <img src="/icon.svg" alt="icon" className='icon'/>
                 <span>الوكالة الرائدة في تطوير المواقع</span>
               </div>
-              
               <h1 className="hero-title">
                 نحول أفكارك إلى
                 <span className="highlight"> مواقع ويب استثنائية </span>
                 تحقق النتائج
               </h1>
-              
               <p className="hero-subtitle">
                 نخصص في تطوير مواقع ويب حديثة وتطبيقات متقدمة تساعد الشركات على النمو والازدهار في العالم الرقمي. 
                 من المتاجر الإلكترونية إلى المنصات المؤسسية، نقدم حلولاً تقنية متكاملة تلبي احتياجاتك
               </p>
-              
               <div className="hero-actions">
-                <button className="btn-primary large" onClick={openPopup}>
+                <button className="btn-primary large" onClick={() => setIsOrderFormOpen(true)}>
                   إنشاء طلب
                   <ArrowLeft size={20} />
                 </button>
-                <button className="btn-outline large">
+                <button className="btn-outline large" onClick={() => setIsPortfolioOpen(true)}>
                   <Play size={18} />
                   شاهد أعمالنا
                 </button>
               </div>
-              
               <div className="hero-stats">
                 <div className="stat">
                   <div className="stat-number">200+</div>
@@ -90,7 +81,6 @@ const Landing = () => {
                 </div>
               </div>
             </div>
-            
             <div className="hero-image">
               <img src="/slidImg.png" alt="Professional web development" />
               <div className="floating-card">
@@ -114,7 +104,6 @@ const Landing = () => {
             <h2>خدماتنا المتميزة في التطوير</h2>
             <p>نقدم حلولاً تقنية شاملة ومبتكرة تساعد عملك على التفوق والنمو في البيئة الرقمية</p>
           </div>
-          
           <div className="services-grid">
             <div className="service-card">
               <div className="service-icon blue">
@@ -131,7 +120,6 @@ const Landing = () => {
                 اعرف المزيد <ArrowUpRight size={16} />
               </button>
             </div>
-            
             <div className="service-card">
               <div className="service-icon orange">
                 <Zap size={28} />
@@ -147,7 +135,6 @@ const Landing = () => {
                 اعرف المزيد <ArrowUpRight size={16} />
               </button>
             </div>
-            
             <div className="service-card">
               <div className="service-icon green">
                 <Smartphone size={28} />
@@ -163,7 +150,6 @@ const Landing = () => {
                 اعرف المزيد <ArrowUpRight size={16} />
               </button>
             </div>
-            
             <div className="service-card">
               <div className="service-icon purple">
                 <TrendingUp size={28} />
@@ -190,7 +176,6 @@ const Landing = () => {
             <h2>قصص نجاح عملائنا</h2>
             <p>اكتشف كيف ساعدنا عملاءنا في تحقيق أهدافهم الرقمية وتنمية أعمالهم</p>
           </div>
-          
           <div className="testimonials-grid">
             <div className="testimonial-card">
               <div className="quote">
@@ -212,7 +197,6 @@ const Landing = () => {
                 </div>
               </div>
             </div>
-            
             <div className="testimonial-card">
               <div className="quote">
                 <Quote size={32} />
@@ -233,7 +217,6 @@ const Landing = () => {
                 </div>
               </div>
             </div>
-            
             <div className="testimonial-card">
               <div className="quote">
                 <Quote size={32} />
@@ -247,7 +230,7 @@ const Landing = () => {
               </div>
               <p>موقعنا الجديد جلب لنا عملاء جدد من جميع أنحاء المغرب. التصميم احترافي والموقع يظهر في النتائج الأولى لجوجل.</p>
               <div className="author">
-                <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop&crop=face" alt="يوسف العمراني" />
+                <img src=" https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop&crop=face" alt="يوسف العمراني" />
                 <div>
                   <h4>يوسف العمراني</h4>
                   <span>مدير وكالة العقارات الذهبية - مراكش</span>
@@ -268,7 +251,7 @@ const Landing = () => {
             </div>
             <h2>هل أنت مستعد لتطوير موقعك؟</h2>
             <p>انضم إلى مئات العملاء الذين اختاروا InfinityScale لتطوير مشاريعهم الرقمية وحققوا نجاحاً باهراً</p>
-            <button className="btn-primary large" onClick={openPopup}>
+            <button className="btn-primary large" onClick={() => setIsOrderFormOpen(true)}>
               إنشاء طلب
               <ArrowLeft size={20} />
             </button>
@@ -310,7 +293,6 @@ const Landing = () => {
                 </a>
               </div>
             </div>
-            
             <div className="footer-section">
               <h4>خدماتنا</h4>
               <ul>
@@ -320,7 +302,6 @@ const Landing = () => {
                 <li><a href="#services">التسويق الرقمي</a></li>
               </ul>
             </div>
-            
             <div className="footer-section">
               <h4>تواصل معنا</h4>
               <div className="contact-details">
@@ -334,19 +315,20 @@ const Landing = () => {
                 </div>
                 <div>
                   <MapPin size={16} />
-                 أكادير، المملكة المغربية
+                  أكادير، المملكة المغربية
                 </div>
               </div>
             </div>
           </div>
-          
           <div className="footer-bottom">
             <p>&copy; 2024 InfinityScale. جميع الحقوق محفوظة.</p>
           </div>
         </div>
       </footer>
 
-      <OrderFormPopup isOpen={isPopupOpen} onClose={closePopup} />
+      {/* Popups */}
+      <OrderFormPopup isOpen={isOrderFormOpen} onClose={() => setIsOrderFormOpen(false)} />
+      <PortfolioPopup isOpen={isPortfolioOpen} onClose={() => setIsPortfolioOpen(false)} />
     </div>
   );
 };
