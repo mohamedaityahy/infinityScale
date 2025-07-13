@@ -28,4 +28,28 @@ a {
   background-color: #7a2cce;
 }
 
+.custom-select {
+  color: #333;
+  appearance: none;
+  background: #fff;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  outline: none;
+  width: 100%;
+  margin-top: 6px;
+  margin-bottom: 6px;
+  padding: 10px 12px;
+  font-size: 1rem;
+  transition: border-color .2s;
+}
+
+.custom-select:focus {
+  border-color: #0070f3;
+  box-shadow: 0 0 0 2px #0070f326;
+}
+
+.custom-select option[disabled] {
+  color: #aaa;
+}
+
 /*# sourceMappingURL=app_globals_css_f9ee138c._.single.css.map*/

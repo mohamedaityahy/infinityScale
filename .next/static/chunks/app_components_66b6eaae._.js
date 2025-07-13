@@ -205,15 +205,49 @@ const OrderFormPopup = ({ isOpen, onClose })=>{
                                     lineNumber: 94,
                                     columnNumber: 13
                                 }, this),
-                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
-                                    type: "text",
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("select", {
                                     id: "service",
                                     name: "service",
                                     value: formData.service,
                                     onChange: handleChange,
                                     required: true,
-                                    placeholder: "اكتب الخدمة التي تريدها"
-                                }, void 0, false, {
+                                    className: "custom-select",
+                                    children: [
+                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
+                                            value: "",
+                                            disabled: true,
+                                            children: "اختر الخدمة المطلوبة"
+                                        }, void 0, false, {
+                                            fileName: "[project]/app/components/form/orderForm.jsx",
+                                            lineNumber: 106,
+                                            columnNumber: 15
+                                        }, this),
+                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
+                                            value: "siteweb",
+                                            children: "تصميم وتطوير موقع إلكتروني"
+                                        }, void 0, false, {
+                                            fileName: "[project]/app/components/form/orderForm.jsx",
+                                            lineNumber: 107,
+                                            columnNumber: 15
+                                        }, this),
+                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
+                                            value: "ads",
+                                            children: "إعلانات ممولة على وسائل التواصل"
+                                        }, void 0, false, {
+                                            fileName: "[project]/app/components/form/orderForm.jsx",
+                                            lineNumber: 108,
+                                            columnNumber: 15
+                                        }, this),
+                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
+                                            value: "video ads",
+                                            children: " فيديو إعلاني احترافية"
+                                        }, void 0, false, {
+                                            fileName: "[project]/app/components/form/orderForm.jsx",
+                                            lineNumber: 109,
+                                            columnNumber: 15
+                                        }, this)
+                                    ]
+                                }, void 0, true, {
                                     fileName: "[project]/app/components/form/orderForm.jsx",
                                     lineNumber: 98,
                                     columnNumber: 13
@@ -234,14 +268,14 @@ const OrderFormPopup = ({ isOpen, onClose })=>{
                                             size: 18
                                         }, void 0, false, {
                                             fileName: "[project]/app/components/form/orderForm.jsx",
-                                            lineNumber: 111,
+                                            lineNumber: 115,
                                             columnNumber: 15
                                         }, this),
                                         "وصف المشروع"
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/app/components/form/orderForm.jsx",
-                                    lineNumber: 110,
+                                    lineNumber: 114,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("textarea", {
@@ -253,13 +287,13 @@ const OrderFormPopup = ({ isOpen, onClose })=>{
                                     rows: "4"
                                 }, void 0, false, {
                                     fileName: "[project]/app/components/form/orderForm.jsx",
-                                    lineNumber: 114,
+                                    lineNumber: 118,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/app/components/form/orderForm.jsx",
-                            lineNumber: 109,
+                            lineNumber: 113,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -272,7 +306,7 @@ const OrderFormPopup = ({ isOpen, onClose })=>{
                                         className: "spinner"
                                     }, void 0, false, {
                                         fileName: "[project]/app/components/form/orderForm.jsx",
-                                        lineNumber: 131,
+                                        lineNumber: 135,
                                         columnNumber: 17
                                     }, this),
                                     "جارٍ الإرسال..."
@@ -283,7 +317,7 @@ const OrderFormPopup = ({ isOpen, onClose })=>{
                                         size: 18
                                     }, void 0, false, {
                                         fileName: "[project]/app/components/form/orderForm.jsx",
-                                        lineNumber: 136,
+                                        lineNumber: 140,
                                         columnNumber: 17
                                     }, this),
                                     "إرسال الطلب"
@@ -291,7 +325,7 @@ const OrderFormPopup = ({ isOpen, onClose })=>{
                             }, void 0, true)
                         }, void 0, false, {
                             fileName: "[project]/app/components/form/orderForm.jsx",
-                            lineNumber: 124,
+                            lineNumber: 128,
                             columnNumber: 11
                         }, this)
                     ]
@@ -312,7 +346,7 @@ const OrderFormPopup = ({ isOpen, onClose })=>{
         columnNumber: 5
     }, this);
 };
-_s(OrderFormPopup, "WDBHaQClZI37o2zT1tr1P1ax+bc=");
+_s(OrderFormPopup, "UHgxBdntRTlP6V1nTWX4gMUuiIc=");
 _c = OrderFormPopup;
 const __TURBOPACK__default__export__ = OrderFormPopup;
 var _c;
@@ -406,7 +440,7 @@ const PortfolioPopup = ({ isOpen, onClose })=>{
                             children: "معرض أعمالنا"
                         }, void 0, false, {
                             fileName: "[project]/app/components/PortfolioPopup/PortfolioPopup.jsx",
-                            lineNumber: 70,
+                            lineNumber: 69,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -416,18 +450,18 @@ const PortfolioPopup = ({ isOpen, onClose })=>{
                                 size: 24
                             }, void 0, false, {
                                 fileName: "[project]/app/components/PortfolioPopup/PortfolioPopup.jsx",
-                                lineNumber: 72,
+                                lineNumber: 71,
                                 columnNumber: 13
                             }, this)
                         }, void 0, false, {
                             fileName: "[project]/app/components/PortfolioPopup/PortfolioPopup.jsx",
-                            lineNumber: 71,
+                            lineNumber: 70,
                             columnNumber: 11
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/app/components/PortfolioPopup/PortfolioPopup.jsx",
-                    lineNumber: 69,
+                    lineNumber: 68,
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -441,14 +475,14 @@ const PortfolioPopup = ({ isOpen, onClose })=>{
                                     size: 18
                                 }, void 0, false, {
                                     fileName: "[project]/app/components/PortfolioPopup/PortfolioPopup.jsx",
-                                    lineNumber: 81,
+                                    lineNumber: 80,
                                     columnNumber: 13
                                 }, this),
                                 "روابط المواقع"
                             ]
                         }, void 0, true, {
                             fileName: "[project]/app/components/PortfolioPopup/PortfolioPopup.jsx",
-                            lineNumber: 77,
+                            lineNumber: 76,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -459,20 +493,20 @@ const PortfolioPopup = ({ isOpen, onClose })=>{
                                     size: 18
                                 }, void 0, false, {
                                     fileName: "[project]/app/components/PortfolioPopup/PortfolioPopup.jsx",
-                                    lineNumber: 88,
+                                    lineNumber: 87,
                                     columnNumber: 13
                                 }, this),
                                 "صور المشاريع"
                             ]
                         }, void 0, true, {
                             fileName: "[project]/app/components/PortfolioPopup/PortfolioPopup.jsx",
-                            lineNumber: 84,
+                            lineNumber: 83,
                             columnNumber: 11
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/app/components/PortfolioPopup/PortfolioPopup.jsx",
-                    lineNumber: 76,
+                    lineNumber: 75,
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -490,7 +524,7 @@ const PortfolioPopup = ({ isOpen, onClose })=>{
                                                     children: project.title
                                                 }, void 0, false, {
                                                     fileName: "[project]/app/components/PortfolioPopup/PortfolioPopup.jsx",
-                                                    lineNumber: 99,
+                                                    lineNumber: 98,
                                                     columnNumber: 21
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -498,20 +532,20 @@ const PortfolioPopup = ({ isOpen, onClose })=>{
                                                     children: project.category
                                                 }, void 0, false, {
                                                     fileName: "[project]/app/components/PortfolioPopup/PortfolioPopup.jsx",
-                                                    lineNumber: 100,
+                                                    lineNumber: 99,
                                                     columnNumber: 21
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/app/components/PortfolioPopup/PortfolioPopup.jsx",
-                                            lineNumber: 98,
+                                            lineNumber: 97,
                                             columnNumber: 19
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                             children: project.description
                                         }, void 0, false, {
                                             fileName: "[project]/app/components/PortfolioPopup/PortfolioPopup.jsx",
-                                            lineNumber: 102,
+                                            lineNumber: 101,
                                             columnNumber: 19
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -526,30 +560,30 @@ const PortfolioPopup = ({ isOpen, onClose })=>{
                                                         size: 16
                                                     }, void 0, false, {
                                                         fileName: "[project]/app/components/PortfolioPopup/PortfolioPopup.jsx",
-                                                        lineNumber: 105,
+                                                        lineNumber: 104,
                                                         columnNumber: 23
                                                     }, this),
                                                     "زيارة الموقع"
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/app/components/PortfolioPopup/PortfolioPopup.jsx",
-                                                lineNumber: 104,
+                                                lineNumber: 103,
                                                 columnNumber: 21
                                             }, this)
                                         }, void 0, false, {
                                             fileName: "[project]/app/components/PortfolioPopup/PortfolioPopup.jsx",
-                                            lineNumber: 103,
+                                            lineNumber: 102,
                                             columnNumber: 19
                                         }, this)
                                     ]
                                 }, index, true, {
                                     fileName: "[project]/app/components/PortfolioPopup/PortfolioPopup.jsx",
-                                    lineNumber: 97,
+                                    lineNumber: 96,
                                     columnNumber: 17
                                 }, this))
                         }, void 0, false, {
                             fileName: "[project]/app/components/PortfolioPopup/PortfolioPopup.jsx",
-                            lineNumber: 95,
+                            lineNumber: 94,
                             columnNumber: 13
                         }, this),
                         activeTab === 'images' && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -564,7 +598,7 @@ const PortfolioPopup = ({ isOpen, onClose })=>{
                                                 alt: project.title
                                             }, void 0, false, {
                                                 fileName: "[project]/app/components/PortfolioPopup/PortfolioPopup.jsx",
-                                                lineNumber: 119,
+                                                lineNumber: 118,
                                                 columnNumber: 21
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -574,45 +608,45 @@ const PortfolioPopup = ({ isOpen, onClose })=>{
                                                     children: project.title
                                                 }, void 0, false, {
                                                     fileName: "[project]/app/components/PortfolioPopup/PortfolioPopup.jsx",
-                                                    lineNumber: 121,
+                                                    lineNumber: 120,
                                                     columnNumber: 23
                                                 }, this)
                                             }, void 0, false, {
                                                 fileName: "[project]/app/components/PortfolioPopup/PortfolioPopup.jsx",
-                                                lineNumber: 120,
+                                                lineNumber: 119,
                                                 columnNumber: 21
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/app/components/PortfolioPopup/PortfolioPopup.jsx",
-                                        lineNumber: 118,
+                                        lineNumber: 117,
                                         columnNumber: 19
                                     }, this)
                                 }, project.id, false, {
                                     fileName: "[project]/app/components/PortfolioPopup/PortfolioPopup.jsx",
-                                    lineNumber: 117,
+                                    lineNumber: 116,
                                     columnNumber: 17
                                 }, this))
                         }, void 0, false, {
                             fileName: "[project]/app/components/PortfolioPopup/PortfolioPopup.jsx",
-                            lineNumber: 115,
+                            lineNumber: 114,
                             columnNumber: 13
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/app/components/PortfolioPopup/PortfolioPopup.jsx",
-                    lineNumber: 93,
+                    lineNumber: 92,
                     columnNumber: 9
                 }, this)
             ]
         }, void 0, true, {
             fileName: "[project]/app/components/PortfolioPopup/PortfolioPopup.jsx",
-            lineNumber: 68,
+            lineNumber: 67,
             columnNumber: 7
         }, this)
     }, void 0, false, {
         fileName: "[project]/app/components/PortfolioPopup/PortfolioPopup.jsx",
-        lineNumber: 67,
+        lineNumber: 66,
         columnNumber: 5
     }, this);
 };
@@ -2088,30 +2122,22 @@ const Landing = ()=>{
                                     children: [
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                             className: "footer-brand",
-                                            children: [
-                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                    className: "logo",
-                                                    children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                                        children: "∞"
-                                                    }, void 0, false, {
-                                                        fileName: "[project]/app/components/home/home.jsx",
-                                                        lineNumber: 279,
-                                                        columnNumber: 19
-                                                    }, this)
+                                            children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                className: "logo",
+                                                children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("img", {
+                                                    src: "/logo.svg",
+                                                    alt: "infinityScale"
                                                 }, void 0, false, {
                                                     fileName: "[project]/app/components/home/home.jsx",
-                                                    lineNumber: 278,
-                                                    columnNumber: 17
-                                                }, this),
-                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
-                                                    children: "InfinityScale"
-                                                }, void 0, false, {
-                                                    fileName: "[project]/app/components/home/home.jsx",
-                                                    lineNumber: 281,
+                                                    lineNumber: 279,
                                                     columnNumber: 17
                                                 }, this)
-                                            ]
-                                        }, void 0, true, {
+                                            }, void 0, false, {
+                                                fileName: "[project]/app/components/home/home.jsx",
+                                                lineNumber: 278,
+                                                columnNumber: 17
+                                            }, this)
+                                        }, void 0, false, {
                                             fileName: "[project]/app/components/home/home.jsx",
                                             lineNumber: 277,
                                             columnNumber: 15
@@ -2120,7 +2146,7 @@ const Landing = ()=>{
                                             children: "شريكك المثالي في تطوير الحلول الرقمية المبتكرة. نحول أفكارك إلى مواقع ويب وتطبيقات ناجحة"
                                         }, void 0, false, {
                                             fileName: "[project]/app/components/home/home.jsx",
-                                            lineNumber: 283,
+                                            lineNumber: 282,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2132,12 +2158,12 @@ const Landing = ()=>{
                                                         size: 20
                                                     }, void 0, false, {
                                                         fileName: "[project]/app/components/home/home.jsx",
-                                                        lineNumber: 286,
+                                                        lineNumber: 285,
                                                         columnNumber: 19
                                                     }, this)
                                                 }, void 0, false, {
                                                     fileName: "[project]/app/components/home/home.jsx",
-                                                    lineNumber: 285,
+                                                    lineNumber: 284,
                                                     columnNumber: 17
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
@@ -2146,12 +2172,12 @@ const Landing = ()=>{
                                                         size: 20
                                                     }, void 0, false, {
                                                         fileName: "[project]/app/components/home/home.jsx",
-                                                        lineNumber: 289,
+                                                        lineNumber: 288,
                                                         columnNumber: 19
                                                     }, this)
                                                 }, void 0, false, {
                                                     fileName: "[project]/app/components/home/home.jsx",
-                                                    lineNumber: 288,
+                                                    lineNumber: 287,
                                                     columnNumber: 17
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
@@ -2160,18 +2186,18 @@ const Landing = ()=>{
                                                         size: 20
                                                     }, void 0, false, {
                                                         fileName: "[project]/app/components/home/home.jsx",
-                                                        lineNumber: 292,
+                                                        lineNumber: 291,
                                                         columnNumber: 19
                                                     }, this)
                                                 }, void 0, false, {
                                                     fileName: "[project]/app/components/home/home.jsx",
-                                                    lineNumber: 291,
+                                                    lineNumber: 290,
                                                     columnNumber: 17
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/app/components/home/home.jsx",
-                                            lineNumber: 284,
+                                            lineNumber: 283,
                                             columnNumber: 15
                                         }, this)
                                     ]
@@ -2187,7 +2213,7 @@ const Landing = ()=>{
                                             children: "خدماتنا"
                                         }, void 0, false, {
                                             fileName: "[project]/app/components/home/home.jsx",
-                                            lineNumber: 297,
+                                            lineNumber: 296,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("ul", {
@@ -2196,6 +2222,20 @@ const Landing = ()=>{
                                                     children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
                                                         href: "#services",
                                                         children: "تطوير المواقع"
+                                                    }, void 0, false, {
+                                                        fileName: "[project]/app/components/home/home.jsx",
+                                                        lineNumber: 298,
+                                                        columnNumber: 21
+                                                    }, this)
+                                                }, void 0, false, {
+                                                    fileName: "[project]/app/components/home/home.jsx",
+                                                    lineNumber: 298,
+                                                    columnNumber: 17
+                                                }, this),
+                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
+                                                    children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
+                                                        href: "#services",
+                                                        children: "تطبيقات الويب"
                                                     }, void 0, false, {
                                                         fileName: "[project]/app/components/home/home.jsx",
                                                         lineNumber: 299,
@@ -2209,7 +2249,7 @@ const Landing = ()=>{
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
                                                     children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
                                                         href: "#services",
-                                                        children: "تطبيقات الويب"
+                                                        children: "المتاجر الإلكترونية"
                                                     }, void 0, false, {
                                                         fileName: "[project]/app/components/home/home.jsx",
                                                         lineNumber: 300,
@@ -2223,7 +2263,7 @@ const Landing = ()=>{
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
                                                     children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
                                                         href: "#services",
-                                                        children: "المتاجر الإلكترونية"
+                                                        children: "التسويق الرقمي"
                                                     }, void 0, false, {
                                                         fileName: "[project]/app/components/home/home.jsx",
                                                         lineNumber: 301,
@@ -2233,31 +2273,17 @@ const Landing = ()=>{
                                                     fileName: "[project]/app/components/home/home.jsx",
                                                     lineNumber: 301,
                                                     columnNumber: 17
-                                                }, this),
-                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
-                                                    children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
-                                                        href: "#services",
-                                                        children: "التسويق الرقمي"
-                                                    }, void 0, false, {
-                                                        fileName: "[project]/app/components/home/home.jsx",
-                                                        lineNumber: 302,
-                                                        columnNumber: 21
-                                                    }, this)
-                                                }, void 0, false, {
-                                                    fileName: "[project]/app/components/home/home.jsx",
-                                                    lineNumber: 302,
-                                                    columnNumber: 17
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/app/components/home/home.jsx",
-                                            lineNumber: 298,
+                                            lineNumber: 297,
                                             columnNumber: 15
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/app/components/home/home.jsx",
-                                    lineNumber: 296,
+                                    lineNumber: 295,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2267,7 +2293,7 @@ const Landing = ()=>{
                                             children: "تواصل معنا"
                                         }, void 0, false, {
                                             fileName: "[project]/app/components/home/home.jsx",
-                                            lineNumber: 306,
+                                            lineNumber: 305,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2279,14 +2305,14 @@ const Landing = ()=>{
                                                             size: 16
                                                         }, void 0, false, {
                                                             fileName: "[project]/app/components/home/home.jsx",
-                                                            lineNumber: 309,
+                                                            lineNumber: 308,
                                                             columnNumber: 19
                                                         }, this),
                                                         "212-655-889-999"
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/app/components/home/home.jsx",
-                                                    lineNumber: 308,
+                                                    lineNumber: 307,
                                                     columnNumber: 17
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2295,14 +2321,14 @@ const Landing = ()=>{
                                                             size: 16
                                                         }, void 0, false, {
                                                             fileName: "[project]/app/components/home/home.jsx",
-                                                            lineNumber: 313,
+                                                            lineNumber: 312,
                                                             columnNumber: 19
                                                         }, this),
                                                         "hello@infinityscale.ma"
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/app/components/home/home.jsx",
-                                                    lineNumber: 312,
+                                                    lineNumber: 311,
                                                     columnNumber: 17
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2311,26 +2337,26 @@ const Landing = ()=>{
                                                             size: 16
                                                         }, void 0, false, {
                                                             fileName: "[project]/app/components/home/home.jsx",
-                                                            lineNumber: 317,
+                                                            lineNumber: 316,
                                                             columnNumber: 19
                                                         }, this),
                                                         "أكادير، المملكة المغربية"
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/app/components/home/home.jsx",
-                                                    lineNumber: 316,
+                                                    lineNumber: 315,
                                                     columnNumber: 17
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/app/components/home/home.jsx",
-                                            lineNumber: 307,
+                                            lineNumber: 306,
                                             columnNumber: 15
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/app/components/home/home.jsx",
-                                    lineNumber: 305,
+                                    lineNumber: 304,
                                     columnNumber: 13
                                 }, this)
                             ]
@@ -2345,12 +2371,12 @@ const Landing = ()=>{
                                 children: "© 2024 InfinityScale. جميع الحقوق محفوظة."
                             }, void 0, false, {
                                 fileName: "[project]/app/components/home/home.jsx",
-                                lineNumber: 324,
+                                lineNumber: 323,
                                 columnNumber: 13
                             }, this)
                         }, void 0, false, {
                             fileName: "[project]/app/components/home/home.jsx",
-                            lineNumber: 323,
+                            lineNumber: 322,
                             columnNumber: 11
                         }, this)
                     ]
@@ -2369,7 +2395,7 @@ const Landing = ()=>{
                 onClose: ()=>setIsOrderFormOpen(false)
             }, void 0, false, {
                 fileName: "[project]/app/components/home/home.jsx",
-                lineNumber: 330,
+                lineNumber: 329,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$app$2f$components$2f$PortfolioPopup$2f$PortfolioPopup$2e$jsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
@@ -2377,7 +2403,7 @@ const Landing = ()=>{
                 onClose: ()=>setIsPortfolioOpen(false)
             }, void 0, false, {
                 fileName: "[project]/app/components/home/home.jsx",
-                lineNumber: 331,
+                lineNumber: 330,
                 columnNumber: 7
             }, this)
         ]

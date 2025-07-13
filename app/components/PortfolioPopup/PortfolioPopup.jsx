@@ -1,4 +1,3 @@
-
 import './PortfolioPopup.css';
 import React, { useState } from 'react';
 import { X, ExternalLink, Eye, Link, Image as ImageIcon } from 'lucide-react';

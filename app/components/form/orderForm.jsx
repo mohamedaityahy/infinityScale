@@ -95,15 +95,19 @@ const OrderFormPopup = ({ isOpen, onClose }) => {
               <Settings size={18} />
               الخدمة المطلوبة
             </label>
-            <input
-              type="text"
+            <select
               id="service"
               name="service"
               value={formData.service}
               onChange={handleChange}
               required
-              placeholder="اكتب الخدمة التي تريدها"
-            />
+              className="custom-select"
+            >
+              <option value="" disabled>اختر الخدمة المطلوبة</option>
+              <option value="siteweb">تصميم وتطوير موقع إلكتروني</option>
+              <option value="ads">إعلانات ممولة على وسائل التواصل</option>
+              <option value="video ads"> فيديو إعلاني احترافية</option>
+            </select>
           </div>
 
           <div className="form-group">

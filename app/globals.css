@@ -27,3 +27,26 @@ a {
 ::-webkit-scrollbar-thumb:hover {
   background-color: #7a2cce; 
 }
+
+/* Modern select dropdown styling for order form */
+.custom-select {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  background: #fff;
+  font-size: 1rem;
+  color: #333;
+  transition: border-color 0.2s;
+  appearance: none;
+  outline: none;
+  margin-top: 6px;
+  margin-bottom: 6px;
+}
+.custom-select:focus {
+  border-color: #0070f3;
+  box-shadow: 0 0 0 2px rgba(0,112,243,0.15);
+}
+.custom-select option[disabled] {
+  color: #aaa;
+}
