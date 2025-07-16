@@ -120,9 +120,10 @@ const OrderFormPopup = ({ isOpen, onClose }) => {
               className="custom-select"
             >
               <option value="" disabled>{t('order_service_placeholder')}</option>
-              <option value="website">{t('order_service_siteweb')}</option>
-              <option value="ads">{t('order_service_ads')}</option>
-              <option value="video">{t('order_service_video')}</option>
+              <option value="shopify-wordpress">{t('order_service_shopify_wordpress')}</option>
+              <option value="coding-saas">{t('order_service_custom_saas')}</option>
+              <option value="video-ads">{t('order_service_video_ads')}</option>
+              <option value="advertising">{t('order_service_advertising')}</option>
             </select>
           </div>
 
