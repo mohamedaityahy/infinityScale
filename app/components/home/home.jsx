@@ -1,14 +1,45 @@
 'use client'
-import React, { useState } from 'react';
-import { Menu, X, Star, ArrowLeft, Play, Globe, Zap, Smartphone, TrendingUp, CheckCircle, ArrowUpRight, Quote, Phone, Mail, MapPin, Twitter, Linkedin, Instagram } from 'lucide-react';
+import React, { useState, useContext, useRef } from 'react';
+import { Menu, X, Star, ArrowLeft, Play, Globe, Zap, Smartphone, TrendingUp, CheckCircle, ArrowUpRight, Quote, Phone, Mail, MapPin, Twitter, Linkedin, Instagram, ChevronDown, ShoppingCart } from 'lucide-react';
 import './home.css';
 import OrderFormPopup from '../form/orderForm';
 import PortfolioPopup from '../PortfolioPopup/PortfolioPopup';
+import { LanguageContext } from '../../context/LanguageContext';
+import en from '../../lang/en.json';
+import ar from '../../lang/ar.json';
+
+const translations = { en, ar };
+
+const LANGUAGES = [
+  { code: 'ar', label: 'العربية' },
+  { code: 'en', label: 'EN' },
+];
 
 const Landing = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [isOrderFormOpen, setIsOrderFormOpen] = useState(false); // ✅ Fixed: renamed for clarity
+  const [isOrderFormOpen, setIsOrderFormOpen] = useState(false);
   const [isPortfolioOpen, setIsPortfolioOpen] = useState(false);
+  const { lang, setLang } = useContext(LanguageContext);
+  const t = (key) => translations[lang][key] || key;
+
+  // Dropdown state
+  const [dropdownOpen, setDropdownOpen] = useState(false);
+  const dropdownRef = useRef(null);
+
+  // Close dropdown on outside click
+  React.useEffect(() => {
+    function handleClickOutside(event) {
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
+        setDropdownOpen(false);
+      }
+    }
+    if (dropdownOpen) {
+      document.addEventListener('mousedown', handleClickOutside);
+    } else {
+      document.removeEventListener('mousedown', handleClickOutside);
+    }
+    return () => document.removeEventListener('mousedown', handleClickOutside);
+  }, [dropdownOpen]);
 
   return (
     <div className="home">
@@ -21,13 +52,50 @@ const Landing = () => {
             </div>
           </div>
           <nav className={`nav ${isMenuOpen ? 'nav-open' : ''}`}>
-            <a href="#services">خدماتنا</a>
-            <a href="#testimonials">آراء العملاء</a>
-            <a href="#contact">اتصل بنا</a>
+            <a href="#services">{t('services')}</a>
+            <a href="#testimonials">{t('testimonials')}</a>
+            <a href="#contact">{t('contact')}</a>
           </nav>
           <div className="header-actions">
-            <button className="btn-secondary">تسجيل الدخول</button>
-            <button className="btn-primary" onClick={() => setIsOrderFormOpen(true)}>إنشاء طلب</button>
+            <div className="lang-switcher-header" ref={dropdownRef}>
+              <button
+                className="lang-dropdown-btn"
+                onClick={() => setDropdownOpen((open) => !open)}
+                aria-haspopup="listbox"
+                aria-expanded={dropdownOpen}
+              >
+                {LANGUAGES.find(l => l.code === lang)?.label}
+                <ChevronDown size={18} style={{ marginInlineStart: 6 }} />
+              </button>
+              {dropdownOpen && (
+                <ul className="lang-dropdown-list" role="listbox">
+                  {LANGUAGES.map((l) => (
+                    <li
+                      key={l.code}
+                      className={`lang-dropdown-item${lang === l.code ? ' active' : ''}`}
+                      onClick={() => { setLang(l.code); setDropdownOpen(false); }}
+                      role="option"
+                      aria-selected={lang === l.code}
+                    >
+                      {l.label}
+                    </li>
+                  ))}
+                </ul>
+              )}
+            </div>
+            <button className="btn-primary" onClick={() => setIsOrderFormOpen(true)}>
+              {lang === 'ar' ? (
+                <>
+                  {t('create_order')}
+                  <ShoppingCart size={20} />
+                </>
+              ) : (
+                <>
+                  <ShoppingCart size={20} />
+                  {t('create_order')}
+                </>
+              )}
+            </button>
           </div>
           <button 
             className="menu-toggle"
@@ -45,51 +113,50 @@ const Landing = () => {
             <div className="hero-text">
               <div className="hero-badge">
                 <img src="/icon.svg" alt="icon" className='icon'/>
-                <span>الوكالة الرائدة في تطوير المواقع</span>
+                <span>{t('hero_badge')}</span>
               </div>
               <h1 className="hero-title">
-                نحول أفكارك إلى
-                <span className="highlight"> مواقع ويب استثنائية </span>
-                تحقق النتائج
+                {t('hero_title_1')}
+                <span className="highlight">{t('hero_title_2')}</span>
+                {t('hero_title_3')}
               </h1>
               <p className="hero-subtitle">
-                نخصص في تطوير مواقع ويب حديثة وتطبيقات متقدمة تساعد الشركات على النمو والازدهار في العالم الرقمي. 
-                من المتاجر الإلكترونية إلى المنصات المؤسسية، نقدم حلولاً تقنية متكاملة تلبي احتياجاتك
+                {t('hero_subtitle')}
               </p>
               <div className="hero-actions">
                 <button className="btn-primary large" onClick={() => setIsOrderFormOpen(true)}>
-                  إنشاء طلب
-                  <ArrowLeft size={20} />
+                  <ShoppingCart size={20} />
+                  {t('create_order')}
                 </button>
                 <button className="btn-outline large" onClick={() => setIsPortfolioOpen(true)}>
                   <Play size={18} />
-                  شاهد أعمالنا
+                  {t('see_works')}
                 </button>
               </div>
               <div className="hero-stats">
                 <div className="stat">
                   <div className="stat-number">200+</div>
-                  <div className="stat-label">مشروع ناجح</div>
+                  <div className="stat-label">{t('stat_projects')}</div>
                 </div>
                 <div className="stat">
                   <div className="stat-number">99%</div>
-                  <div className="stat-label">رضا العملاء</div>
+                  <div className="stat-label">{t('stat_satisfaction')}</div>
                 </div>
                 <div className="stat">
                   <div className="stat-number">5x</div>
-                  <div className="stat-label">نمو الأعمال</div>
+                  <div className="stat-label">{t('stat_growth')}</div>
                 </div>
               </div>
             </div>
             <div className="hero-image">
-              <img src="/slidImg.png" alt="Professional web development" />
+              <img src="/slidImg.png" alt={t('hero_img_alt')} />
               <div className="floating-card">
                 <div className="card-icon">
                   <TrendingUp size={24} />
                 </div>
                 <div className="card-content">
                   <div className="card-number">+300%</div>
-                  <div className="card-text">نمو الأعمال</div>
+                  <div className="card-text">{t('stat_growth')}</div>
                 </div>
               </div>
             </div>
@@ -101,68 +168,68 @@ const Landing = () => {
       <section id="services" className="services">
         <div className="container">
           <div className="section-header">
-            <h2>خدماتنا المتميزة في التطوير</h2>
-            <p>نقدم حلولاً تقنية شاملة ومبتكرة تساعد عملك على التفوق والنمو في البيئة الرقمية</p>
+            <h2>{t('services_header')}</h2>
+            <p>{t('services_desc')}</p>
           </div>
           <div className="services-grid">
             <div className="service-card">
               <div className="service-icon blue">
                 <Globe size={28} />
               </div>
-              <h3>مواقع الويب الاحترافية</h3>
-              <p>مواقع ويب سريعة ومتجاوبة مع جميع الأجهزة، مصممة لتحقيق أعلى معدلات التحويل وتجربة مستخدم استثنائية</p>
+              <h3>{t('service_web_title')}</h3>
+              <p>{t('service_web_desc')}</p>
               <ul>
-                <li><CheckCircle size={16} /> تصميم عصري ومتجاوب</li>
-                <li><CheckCircle size={16} /> تحسين محركات البحث (SEO)</li>
-                <li><CheckCircle size={16} /> سرعة تحميل فائقة</li>
+                <li><CheckCircle size={16} /> {t('service_web_feature1')}</li>
+                <li><CheckCircle size={16} /> {t('service_web_feature2')}</li>
+                <li><CheckCircle size={16} /> {t('service_web_feature3')}</li>
               </ul>
               <button className="service-btn">
-                اعرف المزيد <ArrowUpRight size={16} />
+                {t('learn_more')} <ArrowUpRight size={16} />
               </button>
             </div>
             <div className="service-card">
               <div className="service-icon orange">
                 <Zap size={28} />
               </div>
-              <h3>تطبيقات الويب المتقدمة</h3>
-              <p>تطبيقات ويب تفاعلية قوية مبنية بأحدث التقنيات لتوفير تجربة مستخدم سلسة وأداء متميز</p>
+              <h3>{t('service_app_title')}</h3>
+              <p>{t('service_app_desc')}</p>
               <ul>
-                <li><CheckCircle size={16} /> تقنيات حديثة (React, Node.js)</li>
-                <li><CheckCircle size={16} /> واجهات تفاعلية متطورة</li>
-                <li><CheckCircle size={16} /> أمان وموثوقية عالية</li>
+                <li><CheckCircle size={16} /> {t('service_app_feature1')}</li>
+                <li><CheckCircle size={16} /> {t('service_app_feature2')}</li>
+                <li><CheckCircle size={16} /> {t('service_app_feature3')}</li>
               </ul>
               <button className="service-btn">
-                اعرف المزيد <ArrowUpRight size={16} />
+                {t('learn_more')} <ArrowUpRight size={16} />
               </button>
             </div>
             <div className="service-card">
               <div className="service-icon green">
                 <Smartphone size={28} />
               </div>
-              <h3>المتاجر الإلكترونية</h3>
-              <p>منصات تجارة إلكترونية محسنة للمبيعات مع أنظمة دفع آمنة وإدارة متقدمة للمنتجات والطلبات</p>
+              <h3>{t('service_ecom_title')}</h3>
+              <p>{t('service_ecom_desc')}</p>
               <ul>
-                <li><CheckCircle size={16} /> أنظمة دفع متعددة وآمنة</li>
-                <li><CheckCircle size={16} /> إدارة شاملة للمخزون</li>
-                <li><CheckCircle size={16} /> تقارير مبيعات تفصيلية</li>
+                <li><CheckCircle size={16} /> {t('service_ecom_feature1')}</li>
+                <li><CheckCircle size={16} /> {t('service_ecom_feature2')}</li>
+                <li><CheckCircle size={16} /> {t('service_ecom_feature3')}</li>
               </ul>
               <button className="service-btn">
-                اعرف المزيد <ArrowUpRight size={16} />
+                {t('learn_more')} <ArrowUpRight size={16} />
               </button>
             </div>
             <div className="service-card">
               <div className="service-icon purple">
                 <TrendingUp size={28} />
               </div>
-              <h3>التسويق الرقمي والإعلانات</h3>
-              <p>حملات تسويق رقمي مدروسة وإعلانات مستهدفة لزيادة الوصول وتحقيق أفضل عائد على الاستثمار</p>
+              <h3>{t('service_marketing_title')}</h3>
+              <p>{t('service_marketing_desc')}</p>
               <ul>
-                <li><CheckCircle size={16} /> إعلانات جوجل وفيسبوك</li>
-                <li><CheckCircle size={16} /> تحليل البيانات والأداء</li>
-                <li><CheckCircle size={16} /> استراتيجيات تسويق محتوى</li>
+                <li><CheckCircle size={16} /> {t('service_marketing_feature1')}</li>
+                <li><CheckCircle size={16} /> {t('service_marketing_feature2')}</li>
+                <li><CheckCircle size={16} /> {t('service_marketing_feature3')}</li>
               </ul>
               <button className="service-btn">
-                اعرف المزيد <ArrowUpRight size={16} />
+                {t('learn_more')} <ArrowUpRight size={16} />
               </button>
             </div>
           </div>
@@ -173,8 +240,8 @@ const Landing = () => {
       <section id="testimonials" className="testimonials">
         <div className="container">
           <div className="section-header">
-            <h2>قصص نجاح عملائنا</h2>
-            <p>اكتشف كيف ساعدنا عملاءنا في تحقيق أهدافهم الرقمية وتنمية أعمالهم</p>
+            <h2>{t('testimonials_header')}</h2>
+            <p>{t('testimonials_desc')}</p>
           </div>
           <div className="testimonials-grid">
             <div className="testimonial-card">
@@ -188,12 +255,12 @@ const Landing = () => {
                 <Star size={16} fill="currentColor" />
                 <Star size={16} fill="currentColor" />
               </div>
-              <p>فريق InfinityScale طور لنا متجراً إلكترونياً متقدماً زاد من مبيعاتنا بنسبة 400%. الموقع سريع وسهل الاستخدام وجودة التصميم رائعة.</p>
+              <p>{t('testimonial_1_text')}</p>
               <div className="author">
-                <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&h=400&fit=crop&crop=face" alt="أحمد الحسني" />
+                <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&h=400&fit=crop&crop=face" alt={t('testimonial_1_author')} />
                 <div>
-                  <h4>أحمد الحسني</h4>
-                  <span>مؤسس متجر تكنو برو -أكادير</span>
+                  <h4>{t('testimonial_1_author')}</h4>
+                  <span>{t('testimonial_1_role')}</span>
                 </div>
               </div>
             </div>
@@ -208,12 +275,12 @@ const Landing = () => {
                 <Star size={16} fill="currentColor" />
                 <Star size={16} fill="currentColor" />
               </div>
-              <p>تطبيق الويب الذي بناه لنا InfinityScale حول طريقة عمل شركتنا تماماً. أصبحت العمليات أكثر كفاءة والعملاء أكثر رضا.</p>
+              <p>{t('testimonial_2_text')}</p>
               <div className="author">
-                <img src="/revImg.png" alt="فاطمة بنعلي" />
+                <img src="/revImg.png" alt={t('testimonial_2_author')} />
                 <div>
-                  <h4>فاطمة بنعلي</h4>
-                  <span>مديرة شركة الخدمات اللوجستية - الرباط</span>
+                  <h4>{t('testimonial_2_author')}</h4>
+                  <span>{t('testimonial_2_role')}</span>
                 </div>
               </div>
             </div>
@@ -228,12 +295,12 @@ const Landing = () => {
                 <Star size={16} fill="currentColor" />
                 <Star size={16} fill="currentColor" />
               </div>
-              <p>موقعنا الجديد جلب لنا عملاء جدد من جميع أنحاء المغرب. التصميم احترافي والموقع يظهر في النتائج الأولى لجوجل.</p>
+              <p>{t('testimonial_3_text')}</p>
               <div className="author">
-                <img src=" https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop&crop=face" alt="يوسف العمراني" />
+                <img src=" https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop&crop=face" alt={t('testimonial_3_author')} />
                 <div>
-                  <h4>يوسف العمراني</h4>
-                  <span>مدير وكالة العقارات الذهبية - مراكش</span>
+                  <h4>{t('testimonial_3_author')}</h4>
+                  <span>{t('testimonial_3_role')}</span>
                 </div>
               </div>
             </div>
@@ -247,22 +314,22 @@ const Landing = () => {
           <div className="cta-content">
             <div className="cta-badge">
               <TrendingUp size={16} />
-              ابدأ مشروعك اليوم
+              {t('cta_badge')}
             </div>
-            <h2>هل أنت مستعد لتطوير موقعك؟</h2>
-            <p>انضم إلى مئات العملاء الذين اختاروا InfinityScale لتطوير مشاريعهم الرقمية وحققوا نجاحاً باهراً</p>
+            <h2>{t('cta_title')}</h2>
+            <p>{t('cta_desc')}</p>
             <button className="btn-primary large" onClick={() => setIsOrderFormOpen(true)}>
-              إنشاء طلب
-              <ArrowLeft size={20} />
+              <ShoppingCart size={20} />
+              {t('create_order')}
             </button>
             <div className="contact-info">
               <a href="tel:709130391">
                 <Phone size={16} />
-                212-709130391
+                {t('cta_phone')}
               </a>
               <a href="mailto:hello@infinityscale.ma">
                 <Mail size={16} />
-                hello@infinityscale.ma
+                {t('cta_email')}
               </a>
             </div>
           </div>
@@ -276,51 +343,51 @@ const Landing = () => {
             <div className="footer-section">
               <div className="footer-brand">
                 <div className="logo">
-                <img src="/logo.svg" alt="infinityScale" />
+                  <img src="/logo.svg" alt="infinityScale" />
                 </div>
               </div>
-              <p>شريكك المثالي في تطوير الحلول الرقمية المبتكرة. نحول أفكارك إلى مواقع ويب وتطبيقات ناجحة</p>
+              <p>{t('footer_slogan')}</p>
               <div className="social-links">
-                <a href="#">
+                <a href="#" aria-label="Twitter">
                   <Twitter size={20} />
                 </a>
-                <a href="#">
+                <a href="#" aria-label="LinkedIn">
                   <Linkedin size={20} />
                 </a>
-                <a href="#">
+                <a href="#" aria-label="Instagram">
                   <Instagram size={20} />
                 </a>
               </div>
             </div>
             <div className="footer-section">
-              <h4>خدماتنا</h4>
+              <h4>{t('footer_services')}</h4>
               <ul>
-                <li><a href="#services">تطوير المواقع</a></li>
-                <li><a href="#services">تطبيقات الويب</a></li>
-                <li><a href="#services">المتاجر الإلكترونية</a></li>
-                <li><a href="#services">التسويق الرقمي</a></li>
+                <li><a href="#services">{t('web_development')}</a></li>
+                <li><a href="#services">{t('web_applications')}</a></li>
+                <li><a href="#services">{t('ecommerce')}</a></li>
+                <li><a href="#services">{t('digital_marketing')}</a></li>
               </ul>
             </div>
             <div className="footer-section">
-              <h4>تواصل معنا</h4>
+              <h4>{t('footer_contact')}</h4>
               <div className="contact-details">
                 <div>
                   <Phone size={16} />
-                  212-655-889-999
+                  {t('footer_phone')}
                 </div>
                 <div>
                   <Mail size={16} />
-                  hello@infinityscale.ma
+                  {t('footer_email')}
                 </div>
                 <div>
                   <MapPin size={16} />
-                  أكادير، المملكة المغربية
+                  {t('footer_address')}
                 </div>
               </div>
             </div>
           </div>
           <div className="footer-bottom">
-            <p>&copy; 2024 InfinityScale. جميع الحقوق محفوظة.</p>
+            <p>{t('footer_copyright')}</p>
           </div>
         </div>
       </footer>

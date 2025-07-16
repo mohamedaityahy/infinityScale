@@ -1,128 +1,130 @@
 import './PortfolioPopup.css';
-import React, { useState } from 'react';
-import { X, ExternalLink, Eye, Link, Image as ImageIcon } from 'lucide-react';
+import React, { useState, useMemo, useContext } from 'react';
+import { ChevronLeft, ChevronRight, X } from 'lucide-react';
+import { LanguageContext } from '../../context/LanguageContext';
+import en from '../../lang/en.json';
+import ar from '../../lang/ar.json';
+
+const translations = { en, ar };
 
 const PortfolioPopup = ({ isOpen, onClose }) => {
-  const [activeTab, setActiveTab] = useState('links');
-
-  const portfolioLinks = [
-    {
-      title: 'متجر الأزياء الراقية',
-      url: 'https://template-kit.evonicmedia.com/layout41',
-      description: 'متجر إلكتروني متجاوب لعرض وبيع الأزياء النسائية باستخدام WooCommerce بتصميم احترافي.',
-      category: 'متجر إلكتروني'
-    },
-    {
-      title: 'عيادة الدكتور  (Carino)',
-      url: 'https://kits.haidezign.net/carino',
-      description: 'موقع وكالة رقمية/تسويق مُخصص لوكالات الديجيتال، يركز على عرض الخدمات البصرية والتسويقية.', 
-      category: 'وكالة رقمية / تسويق'
-    },
-    {
-      title: 'مكتب المحاماة الذهبي',
-      url: 'https://demo.bosathemes.com/agentor/template-kit/home/',
-      description: 'موقع شركة قانونية (Legalor) يعرض الخدمات، المحامين، واستشارات أونلاين.', 
-      category: 'موقع قانوني'
-    },
-    {
-      title: 'Digipay',
-      url: 'https://templatekit.jegtheme.com/digipay/',
-      description: 'بوابة دفع إلكترونية/FinTech تدعم بطاقات متعددة، دفع متكرر، ومراقبة لحظية للمعاملات.', 
-      category: 'بوابة دفع / FinTech'
-    },
-    {
-      title: 'Aimo',
-      url: 'https://demo.casethemes.net/aimo/home-02-one-page/',
-      description: 'موقع لوكالات تقنية/ذكاء اصطناعي بعرض صفحة واحدة، تصميم عصري لعرض الخدمات.', 
-      category: 'تقنية / AI'
-    },
-    {
-      title: 'مطعم الأصالة',
-      url: 'https://templates.sparklethings.com/mantri/template-kit/home/',
-      description: 'موقع مطعم متكامل يعرض قائمة الطعام مع إمكانية طلب أونلاين وحجز طاولات.', 
-      category: 'موقع مطعم'
-    }
-  ];
-  
-  
-  
+  const { lang } = useContext(LanguageContext);
+  const t = (key) => translations[lang][key] || key;
 
   const portfolioImages = [
     {
       id: 1,
-      title: ' REWORK ',
+      platform: "WordPress",
+      title: { en: 'REWORK', ar: 'إعادة العمل' },
       image: '/landing (1).webp',
     },
     {
+      id: 2,
+      platform: "Shopify",
+      title: { en: 'E-Commerce Store', ar: 'متجر إلكتروني' },
+      image: '/landing (2).webp',
+    },
+    {
       id: 3,
-      title: ' Ai works ',
+      platform: "Shopify",
+      title: { en: 'AI Works', ar: 'أعمال الذكاء الاصطناعي' },
       image: '/landing (3).webp',
+    },
+    {
+      id: 4,
+      platform: "WordPress",
+      title: { en: 'Business Website', ar: 'موقع أعمال' },
+      image: '/landing (4).webp',
     },
   ];
 
+  // Get unique platforms
+  const platforms = useMemo(() => [
+    ...new Set(portfolioImages.map(img => img.platform))
+  ], [portfolioImages]);
+
+  const [activePlatform, setActivePlatform] = useState('all');
+  const filteredImages = useMemo(() =>
+    activePlatform === 'all'
+      ? portfolioImages
+      : portfolioImages.filter(img => img.platform === activePlatform),
+    [activePlatform, portfolioImages]
+  );
+  const [selectedIndex, setSelectedIndex] = useState(0);
+
+  // Reset selectedIndex if filter changes
+  React.useEffect(() => {
+    setSelectedIndex(0);
+  }, [activePlatform]);
+
   if (!isOpen) return null;
 
+  const handlePrev = () => {
+    if (selectedIndex > 0) setSelectedIndex(selectedIndex - 1);
+  };
+  const handleNext = () => {
+    if (selectedIndex < filteredImages.length - 1) setSelectedIndex(selectedIndex + 1);
+  };
+
   return (
-    <div className="popup-overlay">
+    <div className="popup-overlay" onClick={e => { if (e.target.classList.contains('popup-overlay')) onClose(); }}>
       <div className="portfolio-popup-container">
-        <div className="popup-header">
-          <h2>معرض أعمالنا</h2>
-          <button className="close-button" onClick={onClose}>
+        <div className="platform-filter-row-with-x">
+          <div className="platform-filter-row">
+            <button
+              className={`platform-filter-btn${activePlatform === 'all' ? ' active' : ''}`}
+              onClick={() => setActivePlatform('all')}
+            >
+              {t('all')}
+            </button>
+            {platforms.map(platform => (
+              <button
+                key={platform}
+                className={`platform-filter-btn${activePlatform === platform ? ' active' : ''}`}
+                onClick={() => setActivePlatform(platform)}
+              >
+                {platform}
+              </button>
+            ))}
+          </div>
+          <button className="close-x-btn" onClick={onClose} aria-label={t('close')}>
             <X size={24} />
           </button>
         </div>
-        
-        <div className="portfolio-tabs">
-          <button 
-            className={`tab-button ${activeTab === 'links' ? 'active' : ''}`}
-            onClick={() => setActiveTab('links')}
-          >
-            <Link size={18} />
-            روابط المواقع
-          </button>
-          <button 
-            className={`tab-button ${activeTab === 'images' ? 'active' : ''}`}
-            onClick={() => setActiveTab('images')}
-          >
-            <ImageIcon size={18} />
-            صور المشاريع
-          </button>
-        </div>
-
-        <div className="portfolio-content">
-          {activeTab === 'links' && (
-            <div className="links-grid">
-              {portfolioLinks.map((project, index) => (
-                <div key={index} className="link-card">
-                  <div className="link-header">
-                    <h3>{project.title}</h3>
-                    <span className="category-badge">{project.category}</span>
-                  </div>
-                  <p>{project.description}</p>
-                  <div className="link-actions">
-                    <a href={project.url} target="_blank" rel="noopener noreferrer" className="visit-link">
-                      <ExternalLink size={16} />
-                      زيارة الموقع
-                    </a>
-                  </div>
+        <div className="portfolio-content single-image-content">
+          {filteredImages.length > 0 ? (
+            <>
+              <div className="image-switch-row">
+                <button
+                  className="arrow-btn left"
+                  onClick={handlePrev}
+                  disabled={selectedIndex === 0}
+                  aria-label={t('prev')}
+                >
+                  <ChevronLeft size={32} />
+                </button>
+                <div className="image-title-center">
+                  {filteredImages[selectedIndex].title[lang]}
                 </div>
-              ))}
-            </div>
-          )}
-
-          {activeTab === 'images' && (
-            <div className="images-grid">
-              {portfolioImages.map((project) => (
-                <div key={project.id} className="image-card">
-                  <div className="image-container">
-                    <img src={project.image} alt={project.title} />
-                    <div className="image-overlay">
-                      <span className="category-badge">{project.title}</span>
-                    </div>
-                  </div>
-                </div>
-              ))}
-            </div>
+                <button
+                  className="arrow-btn right"
+                  onClick={handleNext}
+                  disabled={selectedIndex === filteredImages.length - 1}
+                  aria-label={t('next')}
+                >
+                  <ChevronRight size={32} />
+                </button>
+              </div>
+              <div className="main-image-container">
+                <img
+                  src={filteredImages[selectedIndex].image}
+                  alt={filteredImages[selectedIndex].title[lang]}
+                  className="main-image"
+                />
+              </div>
+            </>
+          ) : (
+            <div className="no-works-msg">{t('no_works')}</div>
           )}
         </div>
       </div>

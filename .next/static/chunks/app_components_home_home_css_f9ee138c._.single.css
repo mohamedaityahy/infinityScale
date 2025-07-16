@@ -880,15 +880,38 @@ body {
 
   .popup-container {
     width: 95%;
-    margin: 20px;
+    margin: 10px;
   }
 
   .popup-header {
-    padding: 20px 24px;
+    padding: 16px 20px;
+  }
+
+  .popup-header h2 {
+    font-size: 20px;
   }
 
   .order-form {
-    padding: 24px;
+    padding: 16px 20px;
+  }
+
+  .form-group {
+    margin-bottom: 16px;
+  }
+
+  .form-group label {
+    margin-bottom: 6px;
+    font-size: 13px;
+  }
+
+  .form-group input, .form-group select, .form-group textarea {
+    padding: 10px 12px;
+    font-size: 14px;
+  }
+
+  .submit-button {
+    padding: 14px;
+    font-size: 14px;
   }
 
   .footer-section {
@@ -916,6 +939,42 @@ body {
   .footer {
     padding: 60px 0 24px;
   }
+
+  .popup-container {
+    width: 98%;
+    margin: 5px;
+  }
+
+  .popup-header {
+    padding: 12px 16px;
+  }
+
+  .popup-header h2 {
+    font-size: 18px;
+  }
+
+  .order-form {
+    padding: 12px 16px;
+  }
+
+  .form-group {
+    margin-bottom: 12px;
+  }
+
+  .form-group label {
+    margin-bottom: 4px;
+    font-size: 12px;
+  }
+
+  .form-group input, .form-group select, .form-group textarea {
+    padding: 8px 10px;
+    font-size: 13px;
+  }
+
+  .submit-button {
+    padding: 12px;
+    font-size: 13px;
+  }
 }
 
 .hero-badge {
@@ -927,7 +986,7 @@ body {
   gap: 8px;
   margin-bottom: 24px;
   padding: 8px 16px;
-  font-size: 14px;
+  font-size: 12px;
   font-weight: 600;
   display: inline-flex;
 }
@@ -987,6 +1046,171 @@ body {
 
 .icon {
   height: 30px;
+}
+
+.lang-switcher-header {
+  align-items: center;
+  display: flex;
+  position: relative;
+}
+
+.lang-dropdown-btn {
+  color: #8a3aff;
+  cursor: pointer;
+  background: #f3f0ff;
+  border: none;
+  border-radius: 999px;
+  outline: none;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 18px 4px 14px;
+  font-size: 1rem;
+  font-weight: 700;
+  transition: background .18s, color .18s, box-shadow .18s;
+  display: flex;
+  box-shadow: 0 1px 6px #8a3aff0a;
+}
+
+.lang-dropdown-btn:focus, .lang-dropdown-btn.active {
+  color: #fff;
+  background: #8a3aff;
+  box-shadow: 0 2px 8px #8a3aff1a;
+}
+
+.lang-dropdown-list {
+  z-index: 100;
+  background: #fff;
+  border: 1px solid #e0d7fa;
+  border-radius: 12px;
+  min-width: 120px;
+  margin: 0;
+  padding: 6px 0;
+  list-style: none;
+  position: absolute;
+  top: 110%;
+  left: 0;
+  box-shadow: 0 8px 24px #8a3aff1a;
+}
+
+[dir="rtl"] .lang-dropdown-list {
+  left: auto;
+  right: 0;
+}
+
+.lang-dropdown-item {
+  color: #8a3aff;
+  cursor: pointer;
+  text-align: start;
+  background: none;
+  border: none;
+  padding: 8px 18px;
+  font-size: 1rem;
+  transition: background .15s, color .15s;
+}
+
+.lang-dropdown-item.active, .lang-dropdown-item:focus {
+  color: #6d28d9;
+  background: #f3f0ff;
+}
+
+.lang-dropdown-item:hover:not(.active) {
+  color: #6d28d9;
+  background: #e0d7fa;
+}
+
+@media (width <= 768px) {
+  .lang-dropdown-btn {
+    padding: 3px 10px 3px 8px;
+    font-size: .92rem;
+  }
+
+  .lang-dropdown-list {
+    min-width: 90px;
+  }
+
+  .lang-dropdown-item {
+    padding: 7px 10px;
+    font-size: .92rem;
+  }
+}
+
+[dir="rtl"] .header .container, [dir="rtl"] .footer-content, [dir="ltr"] .header .container, [dir="ltr"] .footer-content {
+  flex-direction: row;
+}
+
+[dir="rtl"] .hero-content {
+  direction: rtl;
+}
+
+[dir="ltr"] .hero-content {
+  direction: ltr;
+}
+
+[dir="rtl"] .footer {
+  direction: rtl;
+}
+
+[dir="ltr"] .footer {
+  direction: ltr;
+}
+
+[dir="rtl"] .footer-section ul {
+  padding-right: 0;
+  padding-left: initial;
+}
+
+[dir="ltr"] .footer-section ul {
+  padding-left: 0;
+  padding-right: initial;
+}
+
+[dir="rtl"] .contact-info, [dir="rtl"] .hero-stats {
+  justify-content: flex-end;
+}
+
+[dir="ltr"] .contact-info, [dir="ltr"] .hero-stats {
+  justify-content: flex-start;
+}
+
+body, html {
+  text-align: initial;
+  direction: initial;
+}
+
+[dir="rtl"] .header .container, [dir="ltr"] .header .container {
+  flex-direction: row;
+}
+
+[dir="rtl"] .nav-brand {
+  margin-left: 0;
+  margin-right: 24px;
+}
+
+[dir="ltr"] .nav-brand {
+  margin-left: 24px;
+  margin-right: 0;
+}
+
+[dir="rtl"] .header-actions {
+  flex-direction: row-reverse;
+  gap: 12px;
+}
+
+[dir="ltr"] .header-actions {
+  flex-direction: row;
+  gap: 12px;
+}
+
+[dir="rtl"] .nav {
+  flex-direction: row-reverse;
+}
+
+[dir="rtl"] .footer-content {
+  direction: rtl;
+}
+
+[dir="ltr"] .footer-content {
+  direction: ltr;
 }
 
 /*# sourceMappingURL=app_components_home_home_css_f9ee138c._.single.css.map*/

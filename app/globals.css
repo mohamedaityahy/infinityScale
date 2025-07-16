@@ -1,3 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Tajawal:wght@400;700&display=swap');
+
+.lang-ar, [dir="rtl"] {
+  font-family: 'Tajawal', 'Cairo', 'Noto Kufi Arabic', Arial, Helvetica, sans-serif;
+}
+
+.lang-en, [dir="ltr"] {
+  font-family: 'Inter', 'Roboto', 'Geist', Arial, Helvetica, sans-serif;
+}
 
 * {
   box-sizing: border-box;

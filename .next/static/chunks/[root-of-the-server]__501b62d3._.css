@@ -1,3 +1,4 @@
+@import "https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Tajawal:wght@400;700&display=swap";
 /* [next]/internal/font/google/geist_6feb203d.module.css [app-client] (css) */
 @font-face {
   font-family: Geist;
@@ -93,6 +94,14 @@
 
 
 /* [project]/app/globals.css [app-client] (css) */
+.lang-ar, [dir="rtl"] {
+  font-family: Tajawal, Cairo, Noto Kufi Arabic, Arial, Helvetica, sans-serif;
+}
+
+.lang-en, [dir="ltr"] {
+  font-family: Inter, Roboto, Geist, Arial, Helvetica, sans-serif;
+}
+
 * {
   box-sizing: border-box;
   font-family: var(--font-cairo), sans-serif;

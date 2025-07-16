@@ -1,7 +1,16 @@
-import React, { useState } from 'react';
+'use client';
+import React, { useState, useContext } from 'react';
 import { X, User, Phone, Settings, MessageSquare, Send } from 'lucide-react';
+import { LanguageContext } from '../../context/LanguageContext';
+import en from '../../lang/en.json';
+import ar from '../../lang/ar.json';
+
+const translations = { en, ar };
 
 const OrderFormPopup = ({ isOpen, onClose }) => {
+  const { lang } = useContext(LanguageContext);
+  const t = (key) => translations[lang][key] || key;
+
   const [formData, setFormData] = useState({
     name: '',
     phone: '',
@@ -32,26 +41,33 @@ const OrderFormPopup = ({ isOpen, onClose }) => {
       const result = await res.json();
     
       if (result.success) {
-        alert('تم إرسال طلبك بنجاح! سنتواصل معك قريباً');
+        alert(t('order_success'));
         setFormData({ name: '', phone: '', service: '', description: '' });
         onClose();
       } else {
-        alert('حدث خطأ أثناء الإرسال: ' + result.error);
+        alert(t('order_error') + result.error);
       }
     } catch (err) {
       console.error('Submit error:', err);
-      alert('فشل في إرسال الطلب');
+      alert(t('order_fail'));
     }
     setIsSubmitting(false);    
   };
 
   if (!isOpen) return null;
 
+  // Handler to close only if overlay is clicked
+  const handleOverlayClick = (e) => {
+    if (e.target.classList.contains('popup-overlay')) {
+      onClose();
+    }
+  };
+
   return (
-    <div className="popup-overlay">
+    <div className="popup-overlay" onClick={handleOverlayClick}>
       <div className="popup-container">
         <div className="popup-header">
-          <h2>إنشاء طلب جديد</h2>
+          <h2>{t('order_title')}</h2>
           <button className="close-button" onClick={onClose}>
             <X size={24} />
           </button>
@@ -61,7 +77,7 @@ const OrderFormPopup = ({ isOpen, onClose }) => {
           <div className="form-group">
             <label htmlFor="name">
               <User size={18} />
-              الاسم الكامل
+              {t('order_name')}
             </label>
             <input
               type="text"
@@ -70,14 +86,14 @@ const OrderFormPopup = ({ isOpen, onClose }) => {
               value={formData.name}
               onChange={handleChange}
               required
-              placeholder="أدخل اسمك الكامل"
+              placeholder={t('order_name_placeholder')}
             />
           </div>
 
           <div className="form-group">
             <label htmlFor="phone">
               <Phone size={18} />
-              رقم الهاتف
+              {t('order_phone')}
             </label>
             <input
               type="tel"
@@ -86,14 +102,14 @@ const OrderFormPopup = ({ isOpen, onClose }) => {
               value={formData.phone}
               onChange={handleChange}
               required
-              placeholder="+212 6XX XX XX XX"
+              placeholder={t('order_phone_placeholder')}
             />
           </div>
 
           <div className="form-group">
             <label htmlFor="service">
               <Settings size={18} />
-              الخدمة المطلوبة
+              {t('order_service')}
             </label>
             <select
               id="service"
@@ -103,24 +119,24 @@ const OrderFormPopup = ({ isOpen, onClose }) => {
               required
               className="custom-select"
             >
-              <option value="" disabled>اختر الخدمة المطلوبة</option>
-              <option value="siteweb">تصميم وتطوير موقع إلكتروني</option>
-              <option value="ads">إعلانات ممولة على وسائل التواصل</option>
-              <option value="video ads"> فيديو إعلاني احترافية</option>
+              <option value="" disabled>{t('order_service_placeholder')}</option>
+              <option value="website">{t('order_service_siteweb')}</option>
+              <option value="ads">{t('order_service_ads')}</option>
+              <option value="video">{t('order_service_video')}</option>
             </select>
           </div>
 
           <div className="form-group">
             <label htmlFor="description">
               <MessageSquare size={18} />
-              وصف المشروع
+              {t('order_description')}
             </label>
             <textarea
               id="description"
               name="description"
               value={formData.description}
               onChange={handleChange}
-              placeholder="اكتب تفاصيل مشروعك والنتائج التي تريد تحقيقها..."
+              placeholder={t('order_description_placeholder')}
               rows="4"
             />
           </div>
@@ -133,12 +149,12 @@ const OrderFormPopup = ({ isOpen, onClose }) => {
             {isSubmitting ? (
               <>
                 <div className="spinner"></div>
-                جارٍ الإرسال...
+                {t('order_sending')}
               </>
             ) : (
               <>
                 <Send size={18} />
-                إرسال الطلب
+                {t('order_submit')}
               </>
             )}
           </button>

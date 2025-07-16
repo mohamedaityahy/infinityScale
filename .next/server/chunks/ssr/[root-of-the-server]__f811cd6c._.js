@@ -73,8 +73,15 @@ const OrderFormPopup = ({ isOpen, onClose })=>{
         setIsSubmitting(false);
     };
     if (!isOpen) return null;
+    // Handler to close only if overlay is clicked
+    const handleOverlayClick = (e)=>{
+        if (e.target.classList.contains('popup-overlay')) {
+            onClose();
+        }
+    };
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
         className: "popup-overlay",
+        onClick: handleOverlayClick,
         children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
             className: "popup-container",
             children: [
@@ -85,7 +92,7 @@ const OrderFormPopup = ({ isOpen, onClose })=>{
                             children: "إنشاء طلب جديد"
                         }, void 0, false, {
                             fileName: "[project]/app/components/form/orderForm.jsx",
-                            lineNumber: 54,
+                            lineNumber: 61,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -95,18 +102,18 @@ const OrderFormPopup = ({ isOpen, onClose })=>{
                                 size: 24
                             }, void 0, false, {
                                 fileName: "[project]/app/components/form/orderForm.jsx",
-                                lineNumber: 56,
+                                lineNumber: 63,
                                 columnNumber: 13
                             }, this)
                         }, void 0, false, {
                             fileName: "[project]/app/components/form/orderForm.jsx",
-                            lineNumber: 55,
+                            lineNumber: 62,
                             columnNumber: 11
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/app/components/form/orderForm.jsx",
-                    lineNumber: 53,
+                    lineNumber: 60,
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("form", {
@@ -123,14 +130,14 @@ const OrderFormPopup = ({ isOpen, onClose })=>{
                                             size: 18
                                         }, void 0, false, {
                                             fileName: "[project]/app/components/form/orderForm.jsx",
-                                            lineNumber: 63,
+                                            lineNumber: 70,
                                             columnNumber: 15
                                         }, this),
                                         "الاسم الكامل"
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/app/components/form/orderForm.jsx",
-                                    lineNumber: 62,
+                                    lineNumber: 69,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
@@ -143,13 +150,13 @@ const OrderFormPopup = ({ isOpen, onClose })=>{
                                     placeholder: "أدخل اسمك الكامل"
                                 }, void 0, false, {
                                     fileName: "[project]/app/components/form/orderForm.jsx",
-                                    lineNumber: 66,
+                                    lineNumber: 73,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/app/components/form/orderForm.jsx",
-                            lineNumber: 61,
+                            lineNumber: 68,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -162,14 +169,14 @@ const OrderFormPopup = ({ isOpen, onClose })=>{
                                             size: 18
                                         }, void 0, false, {
                                             fileName: "[project]/app/components/form/orderForm.jsx",
-                                            lineNumber: 79,
+                                            lineNumber: 86,
                                             columnNumber: 15
                                         }, this),
                                         "رقم الهاتف"
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/app/components/form/orderForm.jsx",
-                                    lineNumber: 78,
+                                    lineNumber: 85,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
@@ -182,13 +189,13 @@ const OrderFormPopup = ({ isOpen, onClose })=>{
                                     placeholder: "+212 6XX XX XX XX"
                                 }, void 0, false, {
                                     fileName: "[project]/app/components/form/orderForm.jsx",
-                                    lineNumber: 82,
+                                    lineNumber: 89,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/app/components/form/orderForm.jsx",
-                            lineNumber: 77,
+                            lineNumber: 84,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -201,14 +208,14 @@ const OrderFormPopup = ({ isOpen, onClose })=>{
                                             size: 18
                                         }, void 0, false, {
                                             fileName: "[project]/app/components/form/orderForm.jsx",
-                                            lineNumber: 95,
+                                            lineNumber: 102,
                                             columnNumber: 15
                                         }, this),
                                         "الخدمة المطلوبة"
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/app/components/form/orderForm.jsx",
-                                    lineNumber: 94,
+                                    lineNumber: 101,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("select", {
@@ -225,7 +232,7 @@ const OrderFormPopup = ({ isOpen, onClose })=>{
                                             children: "اختر الخدمة المطلوبة"
                                         }, void 0, false, {
                                             fileName: "[project]/app/components/form/orderForm.jsx",
-                                            lineNumber: 106,
+                                            lineNumber: 113,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
@@ -233,7 +240,7 @@ const OrderFormPopup = ({ isOpen, onClose })=>{
                                             children: "تصميم وتطوير موقع إلكتروني"
                                         }, void 0, false, {
                                             fileName: "[project]/app/components/form/orderForm.jsx",
-                                            lineNumber: 107,
+                                            lineNumber: 114,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
@@ -241,7 +248,7 @@ const OrderFormPopup = ({ isOpen, onClose })=>{
                                             children: "إعلانات ممولة على وسائل التواصل"
                                         }, void 0, false, {
                                             fileName: "[project]/app/components/form/orderForm.jsx",
-                                            lineNumber: 108,
+                                            lineNumber: 115,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
@@ -249,19 +256,19 @@ const OrderFormPopup = ({ isOpen, onClose })=>{
                                             children: " فيديو إعلاني احترافية"
                                         }, void 0, false, {
                                             fileName: "[project]/app/components/form/orderForm.jsx",
-                                            lineNumber: 109,
+                                            lineNumber: 116,
                                             columnNumber: 15
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/app/components/form/orderForm.jsx",
-                                    lineNumber: 98,
+                                    lineNumber: 105,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/app/components/form/orderForm.jsx",
-                            lineNumber: 93,
+                            lineNumber: 100,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -274,14 +281,14 @@ const OrderFormPopup = ({ isOpen, onClose })=>{
                                             size: 18
                                         }, void 0, false, {
                                             fileName: "[project]/app/components/form/orderForm.jsx",
-                                            lineNumber: 115,
+                                            lineNumber: 122,
                                             columnNumber: 15
                                         }, this),
                                         "وصف المشروع"
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/app/components/form/orderForm.jsx",
-                                    lineNumber: 114,
+                                    lineNumber: 121,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("textarea", {
@@ -293,13 +300,13 @@ const OrderFormPopup = ({ isOpen, onClose })=>{
                                     rows: "4"
                                 }, void 0, false, {
                                     fileName: "[project]/app/components/form/orderForm.jsx",
-                                    lineNumber: 118,
+                                    lineNumber: 125,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/app/components/form/orderForm.jsx",
-                            lineNumber: 113,
+                            lineNumber: 120,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -312,7 +319,7 @@ const OrderFormPopup = ({ isOpen, onClose })=>{
                                         className: "spinner"
                                     }, void 0, false, {
                                         fileName: "[project]/app/components/form/orderForm.jsx",
-                                        lineNumber: 135,
+                                        lineNumber: 142,
                                         columnNumber: 17
                                     }, this),
                                     "جارٍ الإرسال..."
@@ -323,7 +330,7 @@ const OrderFormPopup = ({ isOpen, onClose })=>{
                                         size: 18
                                     }, void 0, false, {
                                         fileName: "[project]/app/components/form/orderForm.jsx",
-                                        lineNumber: 140,
+                                        lineNumber: 147,
                                         columnNumber: 17
                                     }, this),
                                     "إرسال الطلب"
@@ -331,24 +338,24 @@ const OrderFormPopup = ({ isOpen, onClose })=>{
                             }, void 0, true)
                         }, void 0, false, {
                             fileName: "[project]/app/components/form/orderForm.jsx",
-                            lineNumber: 128,
+                            lineNumber: 135,
                             columnNumber: 11
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/app/components/form/orderForm.jsx",
-                    lineNumber: 60,
+                    lineNumber: 67,
                     columnNumber: 9
                 }, this)
             ]
         }, void 0, true, {
             fileName: "[project]/app/components/form/orderForm.jsx",
-            lineNumber: 52,
+            lineNumber: 59,
             columnNumber: 7
         }, this)
     }, void 0, false, {
         fileName: "[project]/app/components/form/orderForm.jsx",
-        lineNumber: 51,
+        lineNumber: 58,
         columnNumber: 5
     }, this);
 };
@@ -364,286 +371,259 @@ __turbopack_context__.s({
 });
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/server/route-modules/app-page/vendored/ssr/react-jsx-dev-runtime.js [app-ssr] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/server/route-modules/app-page/vendored/ssr/react.js [app-ssr] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$chevron$2d$left$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__ChevronLeft$3e$__ = __turbopack_context__.i("[project]/node_modules/lucide-react/dist/esm/icons/chevron-left.js [app-ssr] (ecmascript) <export default as ChevronLeft>");
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$chevron$2d$right$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__ChevronRight$3e$__ = __turbopack_context__.i("[project]/node_modules/lucide-react/dist/esm/icons/chevron-right.js [app-ssr] (ecmascript) <export default as ChevronRight>");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$x$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__X$3e$__ = __turbopack_context__.i("[project]/node_modules/lucide-react/dist/esm/icons/x.js [app-ssr] (ecmascript) <export default as X>");
-var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$external$2d$link$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__ExternalLink$3e$__ = __turbopack_context__.i("[project]/node_modules/lucide-react/dist/esm/icons/external-link.js [app-ssr] (ecmascript) <export default as ExternalLink>");
-var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$link$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__Link$3e$__ = __turbopack_context__.i("[project]/node_modules/lucide-react/dist/esm/icons/link.js [app-ssr] (ecmascript) <export default as Link>");
-var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$image$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__Image$3e$__ = __turbopack_context__.i("[project]/node_modules/lucide-react/dist/esm/icons/image.js [app-ssr] (ecmascript) <export default as Image>");
+(()=>{
+    const e = new Error("Cannot find module '../../lang/en.json'");
+    e.code = 'MODULE_NOT_FOUND';
+    throw e;
+})();
+(()=>{
+    const e = new Error("Cannot find module '../../lang/ar.json'");
+    e.code = 'MODULE_NOT_FOUND';
+    throw e;
+})();
 ;
 ;
 ;
 ;
+;
+;
+const translations = {
+    en,
+    ar
+};
 const PortfolioPopup = ({ isOpen, onClose })=>{
-    const [activeTab, setActiveTab] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])('links');
-    const portfolioLinks = [
-        {
-            title: 'متجر الأزياء الراقية',
-            url: 'https://template-kit.evonicmedia.com/layout41',
-            description: 'متجر إلكتروني متجاوب لعرض وبيع الأزياء النسائية باستخدام WooCommerce بتصميم احترافي.',
-            category: 'متجر إلكتروني'
-        },
-        {
-            title: 'عيادة الدكتور  (Carino)',
-            url: 'https://kits.haidezign.net/carino',
-            description: 'موقع وكالة رقمية/تسويق مُخصص لوكالات الديجيتال، يركز على عرض الخدمات البصرية والتسويقية.',
-            category: 'وكالة رقمية / تسويق'
-        },
-        {
-            title: 'مكتب المحاماة الذهبي',
-            url: 'https://demo.bosathemes.com/agentor/template-kit/home/',
-            description: 'موقع شركة قانونية (Legalor) يعرض الخدمات، المحامين، واستشارات أونلاين.',
-            category: 'موقع قانوني'
-        },
-        {
-            title: 'Digipay',
-            url: 'https://templatekit.jegtheme.com/digipay/',
-            description: 'بوابة دفع إلكترونية/FinTech تدعم بطاقات متعددة، دفع متكرر، ومراقبة لحظية للمعاملات.',
-            category: 'بوابة دفع / FinTech'
-        },
-        {
-            title: 'Aimo',
-            url: 'https://demo.casethemes.net/aimo/home-02-one-page/',
-            description: 'موقع لوكالات تقنية/ذكاء اصطناعي بعرض صفحة واحدة، تصميم عصري لعرض الخدمات.',
-            category: 'تقنية / AI'
-        },
-        {
-            title: 'مطعم الأصالة',
-            url: 'https://templates.sparklethings.com/mantri/template-kit/home/',
-            description: 'موقع مطعم متكامل يعرض قائمة الطعام مع إمكانية طلب أونلاين وحجز طاولات.',
-            category: 'موقع مطعم'
-        }
-    ];
     const portfolioImages = [
         {
             id: 1,
-            title: ' REWORK ',
+            platform: "wordPress",
+            title: {
+                en: 'REWORK',
+                ar: 'إعادة العمل'
+            },
             image: '/landing (1).webp'
         },
         {
             id: 3,
-            title: ' Ai works ',
+            platform: "Shopify",
+            title: {
+                en: 'AI Works',
+                ar: 'أعمال الذكاء الاصطناعي'
+            },
             image: '/landing (3).webp'
         }
     ];
+    // Language state
+    const [lang, setLang] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])('ar');
+    const t = (key)=>translations[lang][key] || key;
+    // Get unique platforms
+    const platforms = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useMemo"])(()=>[
+            ...new Set(portfolioImages.map((img)=>img.platform))
+        ], [
+        portfolioImages
+    ]);
+    const [activePlatform, setActivePlatform] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])('all');
+    const filteredImages = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useMemo"])(()=>activePlatform === 'all' ? portfolioImages : portfolioImages.filter((img)=>img.platform === activePlatform), [
+        activePlatform,
+        portfolioImages
+    ]);
+    const [selectedIndex, setSelectedIndex] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])(0);
+    // Reset selectedIndex if filter changes
+    __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"].useEffect(()=>{
+        setSelectedIndex(0);
+    }, [
+        activePlatform
+    ]);
     if (!isOpen) return null;
+    const handlePrev = ()=>{
+        if (selectedIndex > 0) setSelectedIndex(selectedIndex - 1);
+    };
+    const handleNext = ()=>{
+        if (selectedIndex < filteredImages.length - 1) setSelectedIndex(selectedIndex + 1);
+    };
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
         className: "popup-overlay",
+        onClick: (e)=>{
+            if (e.target.classList.contains('popup-overlay')) onClose();
+        },
         children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
             className: "portfolio-popup-container",
             children: [
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                    className: "popup-header",
+                    className: "platform-filter-row-with-x",
                     children: [
-                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
-                            children: "معرض أعمالنا"
-                        }, void 0, false, {
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                            className: "platform-filter-row",
+                            children: [
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
+                                    className: `platform-filter-btn${activePlatform === 'all' ? ' active' : ''}`,
+                                    onClick: ()=>setActivePlatform('all'),
+                                    children: t('all')
+                                }, void 0, false, {
+                                    fileName: "[project]/app/components/PortfolioPopup/PortfolioPopup.jsx",
+                                    lineNumber: 62,
+                                    columnNumber: 13
+                                }, this),
+                                platforms.map((platform)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
+                                        className: `platform-filter-btn${activePlatform === platform ? ' active' : ''}`,
+                                        onClick: ()=>setActivePlatform(platform),
+                                        children: platform
+                                    }, platform, false, {
+                                        fileName: "[project]/app/components/PortfolioPopup/PortfolioPopup.jsx",
+                                        lineNumber: 69,
+                                        columnNumber: 15
+                                    }, this))
+                            ]
+                        }, void 0, true, {
                             fileName: "[project]/app/components/PortfolioPopup/PortfolioPopup.jsx",
-                            lineNumber: 69,
+                            lineNumber: 61,
                             columnNumber: 11
                         }, this),
-                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
-                            className: "close-button",
-                            onClick: onClose,
-                            children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$x$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__X$3e$__["X"], {
-                                size: 24
-                            }, void 0, false, {
-                                fileName: "[project]/app/components/PortfolioPopup/PortfolioPopup.jsx",
-                                lineNumber: 71,
-                                columnNumber: 13
-                            }, this)
-                        }, void 0, false, {
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                            className: "lang-switcher",
+                            children: [
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
+                                    className: `lang-btn${lang === 'ar' ? ' active' : ''}`,
+                                    onClick: ()=>setLang('ar'),
+                                    children: "العربية"
+                                }, void 0, false, {
+                                    fileName: "[project]/app/components/PortfolioPopup/PortfolioPopup.jsx",
+                                    lineNumber: 79,
+                                    columnNumber: 13
+                                }, this),
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
+                                    className: `lang-btn${lang === 'en' ? ' active' : ''}`,
+                                    onClick: ()=>setLang('en'),
+                                    children: "EN"
+                                }, void 0, false, {
+                                    fileName: "[project]/app/components/PortfolioPopup/PortfolioPopup.jsx",
+                                    lineNumber: 85,
+                                    columnNumber: 13
+                                }, this),
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
+                                    className: "close-x-btn",
+                                    onClick: onClose,
+                                    "aria-label": t('close'),
+                                    children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$x$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__X$3e$__["X"], {
+                                        size: 24
+                                    }, void 0, false, {
+                                        fileName: "[project]/app/components/PortfolioPopup/PortfolioPopup.jsx",
+                                        lineNumber: 92,
+                                        columnNumber: 15
+                                    }, this)
+                                }, void 0, false, {
+                                    fileName: "[project]/app/components/PortfolioPopup/PortfolioPopup.jsx",
+                                    lineNumber: 91,
+                                    columnNumber: 13
+                                }, this)
+                            ]
+                        }, void 0, true, {
                             fileName: "[project]/app/components/PortfolioPopup/PortfolioPopup.jsx",
-                            lineNumber: 70,
+                            lineNumber: 78,
                             columnNumber: 11
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/app/components/PortfolioPopup/PortfolioPopup.jsx",
-                    lineNumber: 68,
+                    lineNumber: 60,
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                    className: "portfolio-tabs",
-                    children: [
-                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
-                            className: `tab-button ${activeTab === 'links' ? 'active' : ''}`,
-                            onClick: ()=>setActiveTab('links'),
-                            children: [
-                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$link$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__Link$3e$__["Link"], {
-                                    size: 18
-                                }, void 0, false, {
-                                    fileName: "[project]/app/components/PortfolioPopup/PortfolioPopup.jsx",
-                                    lineNumber: 80,
-                                    columnNumber: 13
-                                }, this),
-                                "روابط المواقع"
-                            ]
-                        }, void 0, true, {
-                            fileName: "[project]/app/components/PortfolioPopup/PortfolioPopup.jsx",
-                            lineNumber: 76,
-                            columnNumber: 11
-                        }, this),
-                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
-                            className: `tab-button ${activeTab === 'images' ? 'active' : ''}`,
-                            onClick: ()=>setActiveTab('images'),
-                            children: [
-                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$image$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__Image$3e$__["Image"], {
-                                    size: 18
-                                }, void 0, false, {
-                                    fileName: "[project]/app/components/PortfolioPopup/PortfolioPopup.jsx",
-                                    lineNumber: 87,
-                                    columnNumber: 13
-                                }, this),
-                                "صور المشاريع"
-                            ]
-                        }, void 0, true, {
-                            fileName: "[project]/app/components/PortfolioPopup/PortfolioPopup.jsx",
-                            lineNumber: 83,
-                            columnNumber: 11
-                        }, this)
-                    ]
-                }, void 0, true, {
-                    fileName: "[project]/app/components/PortfolioPopup/PortfolioPopup.jsx",
-                    lineNumber: 75,
-                    columnNumber: 9
-                }, this),
-                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                    className: "portfolio-content",
-                    children: [
-                        activeTab === 'links' && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                            className: "links-grid",
-                            children: portfolioLinks.map((project, index)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                    className: "link-card",
-                                    children: [
-                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                            className: "link-header",
-                                            children: [
-                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
-                                                    children: project.title
-                                                }, void 0, false, {
-                                                    fileName: "[project]/app/components/PortfolioPopup/PortfolioPopup.jsx",
-                                                    lineNumber: 98,
-                                                    columnNumber: 21
-                                                }, this),
-                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                                    className: "category-badge",
-                                                    children: project.category
-                                                }, void 0, false, {
-                                                    fileName: "[project]/app/components/PortfolioPopup/PortfolioPopup.jsx",
-                                                    lineNumber: 99,
-                                                    columnNumber: 21
-                                                }, this)
-                                            ]
-                                        }, void 0, true, {
-                                            fileName: "[project]/app/components/PortfolioPopup/PortfolioPopup.jsx",
-                                            lineNumber: 97,
-                                            columnNumber: 19
-                                        }, this),
-                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                            children: project.description
+                    className: "portfolio-content single-image-content",
+                    children: filteredImages.length > 0 ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Fragment"], {
+                        children: [
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                className: "image-switch-row",
+                                children: [
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
+                                        className: "arrow-btn left",
+                                        onClick: handlePrev,
+                                        disabled: selectedIndex === 0,
+                                        "aria-label": t('prev'),
+                                        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$chevron$2d$left$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__ChevronLeft$3e$__["ChevronLeft"], {
+                                            size: 32
                                         }, void 0, false, {
                                             fileName: "[project]/app/components/PortfolioPopup/PortfolioPopup.jsx",
-                                            lineNumber: 101,
-                                            columnNumber: 19
-                                        }, this),
-                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                            className: "link-actions",
-                                            children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
-                                                href: project.url,
-                                                target: "_blank",
-                                                rel: "noopener noreferrer",
-                                                className: "visit-link",
-                                                children: [
-                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$external$2d$link$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__ExternalLink$3e$__["ExternalLink"], {
-                                                        size: 16
-                                                    }, void 0, false, {
-                                                        fileName: "[project]/app/components/PortfolioPopup/PortfolioPopup.jsx",
-                                                        lineNumber: 104,
-                                                        columnNumber: 23
-                                                    }, this),
-                                                    "زيارة الموقع"
-                                                ]
-                                            }, void 0, true, {
-                                                fileName: "[project]/app/components/PortfolioPopup/PortfolioPopup.jsx",
-                                                lineNumber: 103,
-                                                columnNumber: 21
-                                            }, this)
-                                        }, void 0, false, {
-                                            fileName: "[project]/app/components/PortfolioPopup/PortfolioPopup.jsx",
-                                            lineNumber: 102,
+                                            lineNumber: 106,
                                             columnNumber: 19
                                         }, this)
-                                    ]
-                                }, index, true, {
-                                    fileName: "[project]/app/components/PortfolioPopup/PortfolioPopup.jsx",
-                                    lineNumber: 96,
-                                    columnNumber: 17
-                                }, this))
-                        }, void 0, false, {
-                            fileName: "[project]/app/components/PortfolioPopup/PortfolioPopup.jsx",
-                            lineNumber: 94,
-                            columnNumber: 13
-                        }, this),
-                        activeTab === 'images' && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                            className: "images-grid",
-                            children: portfolioImages.map((project)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                    className: "image-card",
-                                    children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                        className: "image-container",
-                                        children: [
-                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("img", {
-                                                src: project.image,
-                                                alt: project.title
-                                            }, void 0, false, {
-                                                fileName: "[project]/app/components/PortfolioPopup/PortfolioPopup.jsx",
-                                                lineNumber: 118,
-                                                columnNumber: 21
-                                            }, this),
-                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                className: "image-overlay",
-                                                children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                                    className: "category-badge",
-                                                    children: project.title
-                                                }, void 0, false, {
-                                                    fileName: "[project]/app/components/PortfolioPopup/PortfolioPopup.jsx",
-                                                    lineNumber: 120,
-                                                    columnNumber: 23
-                                                }, this)
-                                            }, void 0, false, {
-                                                fileName: "[project]/app/components/PortfolioPopup/PortfolioPopup.jsx",
-                                                lineNumber: 119,
-                                                columnNumber: 21
-                                            }, this)
-                                        ]
-                                    }, void 0, true, {
+                                    }, void 0, false, {
                                         fileName: "[project]/app/components/PortfolioPopup/PortfolioPopup.jsx",
-                                        lineNumber: 117,
-                                        columnNumber: 19
+                                        lineNumber: 100,
+                                        columnNumber: 17
+                                    }, this),
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                        className: "image-title-center",
+                                        children: filteredImages[selectedIndex].title[lang]
+                                    }, void 0, false, {
+                                        fileName: "[project]/app/components/PortfolioPopup/PortfolioPopup.jsx",
+                                        lineNumber: 108,
+                                        columnNumber: 17
+                                    }, this),
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
+                                        className: "arrow-btn right",
+                                        onClick: handleNext,
+                                        disabled: selectedIndex === filteredImages.length - 1,
+                                        "aria-label": t('next'),
+                                        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$chevron$2d$right$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__ChevronRight$3e$__["ChevronRight"], {
+                                            size: 32
+                                        }, void 0, false, {
+                                            fileName: "[project]/app/components/PortfolioPopup/PortfolioPopup.jsx",
+                                            lineNumber: 117,
+                                            columnNumber: 19
+                                        }, this)
+                                    }, void 0, false, {
+                                        fileName: "[project]/app/components/PortfolioPopup/PortfolioPopup.jsx",
+                                        lineNumber: 111,
+                                        columnNumber: 17
                                     }, this)
-                                }, project.id, false, {
+                                ]
+                            }, void 0, true, {
+                                fileName: "[project]/app/components/PortfolioPopup/PortfolioPopup.jsx",
+                                lineNumber: 99,
+                                columnNumber: 15
+                            }, this),
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                className: "main-image-container",
+                                children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("img", {
+                                    src: filteredImages[selectedIndex].image,
+                                    alt: filteredImages[selectedIndex].title[lang],
+                                    className: "main-image"
+                                }, void 0, false, {
                                     fileName: "[project]/app/components/PortfolioPopup/PortfolioPopup.jsx",
-                                    lineNumber: 116,
+                                    lineNumber: 121,
                                     columnNumber: 17
-                                }, this))
-                        }, void 0, false, {
-                            fileName: "[project]/app/components/PortfolioPopup/PortfolioPopup.jsx",
-                            lineNumber: 114,
-                            columnNumber: 13
-                        }, this)
-                    ]
-                }, void 0, true, {
+                                }, this)
+                            }, void 0, false, {
+                                fileName: "[project]/app/components/PortfolioPopup/PortfolioPopup.jsx",
+                                lineNumber: 120,
+                                columnNumber: 15
+                            }, this)
+                        ]
+                    }, void 0, true) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                        className: "no-works-msg",
+                        children: t('no_works')
+                    }, void 0, false, {
+                        fileName: "[project]/app/components/PortfolioPopup/PortfolioPopup.jsx",
+                        lineNumber: 129,
+                        columnNumber: 13
+                    }, this)
+                }, void 0, false, {
                     fileName: "[project]/app/components/PortfolioPopup/PortfolioPopup.jsx",
-                    lineNumber: 92,
+                    lineNumber: 96,
                     columnNumber: 9
                 }, this)
             ]
         }, void 0, true, {
             fileName: "[project]/app/components/PortfolioPopup/PortfolioPopup.jsx",
-            lineNumber: 67,
+            lineNumber: 59,
             columnNumber: 7
         }, this)
     }, void 0, false, {
         fileName: "[project]/app/components/PortfolioPopup/PortfolioPopup.jsx",
-        lineNumber: 66,
+        lineNumber: 58,
         columnNumber: 5
     }, this);
 };
