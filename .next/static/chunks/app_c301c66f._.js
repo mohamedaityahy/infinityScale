@@ -384,7 +384,7 @@ const OrderFormPopup = ({ isOpen, onClose })=>{
         columnNumber: 5
     }, this);
 };
-_s(OrderFormPopup, "z1K556XdwmOTpCAlKaiXHahJZ/o=");
+_s(OrderFormPopup, "uXGzEFVQEcE7I3AdKwU1PNarq/w=");
 _c = OrderFormPopup;
 const __TURBOPACK__default__export__ = OrderFormPopup;
 var _c;
@@ -429,37 +429,25 @@ const PortfolioPopup = ({ isOpen, onClose })=>{
         {
             id: 1,
             platform: "WordPress",
-            title: {
-                en: 'REWORK',
-                ar: 'إعادة العمل'
-            },
+            title: 'REWORK',
             image: '/landing (1).webp'
         },
         {
             id: 2,
             platform: "Shopify",
-            title: {
-                en: 'E-Commerce Store',
-                ar: 'متجر إلكتروني'
-            },
+            title: 'E-Commerce Store',
             image: '/landing (2).webp'
         },
         {
             id: 3,
             platform: "Shopify",
-            title: {
-                en: 'AI Works',
-                ar: 'أعمال الذكاء الاصطناعي'
-            },
+            title: 'AI Works',
             image: '/landing (3).webp'
         },
         {
             id: 4,
             platform: "WordPress",
-            title: {
-                en: 'Business Website',
-                ar: 'موقع أعمال'
-            },
+            title: 'Business Website',
             image: '/landing (4).webp'
         }
     ];

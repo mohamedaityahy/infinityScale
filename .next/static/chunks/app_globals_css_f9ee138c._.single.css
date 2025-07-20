@@ -38,6 +38,8 @@ a {
 
 .custom-select {
   color: #333;
+  -webkit-appearance: none;
+  -moz-appearance: none;
   appearance: none;
   background: #fff;
   border: 1px solid #ccc;
