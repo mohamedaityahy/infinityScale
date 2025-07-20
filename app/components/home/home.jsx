@@ -482,7 +482,7 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-20">
             <h2 className="text-5xl md:text-6xl font-bold mb-6">
-              Our <span className="bg-gradient-to-r Yfrom-purple-400 to-pink-400 bg-clip-text text-transparent">Superpowers</span>
+              Our <span className="bg-gradient-to-r Yfrom-purple-400 to-pink-400 bg-clip-text">Superpowers</span>
             </h2>
             <p className="text-xl text-gray-300 max-w-3xl mx-auto">
               Three legendary services that transform ordinary businesses into digital legends
@@ -641,6 +641,14 @@ export default function Home() {
                   <div className="text-4xl mb-4">☁️</div>
                   <h4 className="text-xl font-bold text-white mb-2">Docker & VPS Deployment</h4>
                   <p className="text-gray-300">Docker containerization, Linux VPS setup, cloud deployment on DigitalOcean, Vercel, and Netlify</p>
+                </div>
+              </div>
+              {/* New SaaS Announcement */}
+              <div className="mt-10 flex justify-center">
+                <div className="bg-gradient-to-r from-emerald-400 to-blue-500 text-white px-3 py-2 rounded-2xl shadow-lg flex items-center gap-2 animate-pulse border-2 border-white/20 w-full whitespace-nowrap justify-center">
+                  <span className="text-xs font-bold whitespace-nowrap">🚀 Coming Soon:</span>
+                  <span className="text-xs font-semibold whitespace-nowrap">eBuilders.com</span>
+                  <span className="hidden sm:inline text-xs text-white/80 whitespace-nowrap">— Our next-gen SaaS: an AI-powered landing page builder for eCommerce creators and businesses. Stay tuned!</span>
                 </div>
               </div>
             </div>
