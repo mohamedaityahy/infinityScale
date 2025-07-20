@@ -1,94 +1,47 @@
 'use client';
 
 import React, { useState, useEffect, useRef } from 'react';
-import { 
-  FaCode, 
-  FaShoppingCart, 
+import {
+  FaCode,
+  FaShoppingCart,
   FaRocket,
   FaBullseye,
-  FaUsers,
   FaCheckCircle,
-  FaStar,
-  FaArrowRight,
-  FaBars,
-  FaTimes,
   FaGlobe,
-  FaPalette,
-  FaDatabase,
-  FaShield,
   FaClock,
   FaHeart,
-  FaCoffee,
   FaLightbulb,
-  FaAward,
   FaComments,
   FaPlay,
-  FaChevronDown,
-  FaMagic,
-  FaFire,
-  FaBolt,
   FaGem,
   FaChartLine,
-  FaUserShield
+  FaUserShield,
+  FaBars,
+  FaTimes
 } from 'react-icons/fa';
-import { 
-  IoSparkles,
-  IoRocketSharp,
-  IoFlashSharp,
-  IoStarSharp
-} from 'react-icons/io5';
-import { 
-  HiSparkles,
-  HiLightningBolt,
-  HiTrendingUp
-} from 'react-icons/hi';
-import { 
-  RiMagicFill,
-  RiSparklingFill,
-  RiFireFill
-} from 'react-icons/ri';
-import { 
-  GiMagicSwirl,
-  GiSparkles,
-  GiCrystalBall,
-  GiMagicHat
-} from 'react-icons/gi';
-import { 
+import { IoRocketSharp } from 'react-icons/io5';
+import { RiMagicFill, RiSparklingFill } from 'react-icons/ri';
+import { GiMagicSwirl, GiSparkles, GiMagicHat } from 'react-icons/gi';
+import {
   BiCodeAlt,
-  BiTrendingUp,
   BiLogoReact,
   BiLogoNodejs,
   BiLogoMongodb,
   BiLogoJavascript,
   BiLogoTypescript,
   BiLogoDocker,
-  BiLogoAws,
   BiLogoPostgresql,
   BiLogoJava
 } from 'react-icons/bi';
-import { 
-  AiOutlineThunderbolt,
-  AiFillThunderbolt,
-  AiFillApi
-} from 'react-icons/ai';
-import { 
-  BsLightningChargeFill,
-  BsStarFill,
-  BsGithub
-} from 'react-icons/bs';
-import { 
-  MdRocketLaunch,
-  MdAutoAwesome,
-  MdCloudQueue
-} from 'react-icons/md';
-import { 
+import { AiFillThunderbolt, AiFillApi } from 'react-icons/ai';
+import { BsStarFill, BsGithub } from 'react-icons/bs';
+import { MdRocketLaunch, MdCloudQueue } from 'react-icons/md';
+import {
   SiNextdotjs,
   SiExpress,
   SiLaravel,
-  SiPhp,
   SiTailwindcss,
   SiMysql,
-  SiRedis,
   SiOpenai,
   SiVercel,
   SiNetlify,
@@ -98,19 +51,10 @@ import {
   SiStripe,
   SiPaypal,
   SiShopify,
-  SiWordpress,
-  SiWoocommerce
+  SiWoo
 } from 'react-icons/si';
-import { 
-  TbBrandVscode,
-  TbApi,
-  TbDatabase,
-  TbCloud,
-  TbBrain
-} from 'react-icons/tb';
-import { 
-  DiGit
-} from 'react-icons/di';
+import { TbBrandVscode, TbApi, TbDatabase, TbBrain } from 'react-icons/tb';
+import { DiGit } from 'react-icons/di';
 import './home.css';
 import OrderFormPopup from '../form/orderForm';
 import PortfolioPopup from '../PortfolioPopup/PortfolioPopup';
@@ -273,7 +217,7 @@ export default function Home() {
     
     // SaaS & E-Commerce Solutions
     { icon: SiShopify, name: "Shopify", category: "E-commerce", color: "text-green-400" },
-    { icon: SiWoocommerce, name: "WooCommerce", category: "E-commerce", color: "text-purple-500" },
+    { icon: SiWoo, name: "WooC..", category: "E-commerce", color: "text-purple-500" },
     { icon: SiStripe, name: "Stripe", category: "Payment", color: "text-purple-400" },
     { icon: SiPaypal, name: "PayPal", category: "Payment", color: "text-blue-500" },
     { icon: FaRocket, name: "SaaS Apps", category: "SaaS", color: "text-pink-400" },
