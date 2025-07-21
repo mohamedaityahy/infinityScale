@@ -1,4 +1,4 @@
-import React, { useState, useMemo } from 'react';
+import { useState, useMemo, useRef } from 'react';
 import { ChevronLeft, ChevronRight, X } from 'lucide-react';
 
 const PortfolioPopup = ({ isOpen, onClose }) => {
@@ -41,7 +41,7 @@ const PortfolioPopup = ({ isOpen, onClose }) => {
   const [selectedIndex, setSelectedIndex] = useState(0);
 
   // Reset selectedIndex if filter changes
-  React.useEffect(() => {
+  useEffect(() => {
     setSelectedIndex(0);
   }, [activePlatform]);
 
@@ -52,11 +52,18 @@ const PortfolioPopup = ({ isOpen, onClose }) => {
     if (selectedIndex < filteredImages.length - 1) setSelectedIndex(selectedIndex + 1);
   };
 
-  // Ref for scrolling to the selected image
-  const imageRefs = React.useRef([]);
-  React.useEffect(() => {
+  //  
+  const imageRefs = useRef([]);
+  // Ref for the image container (scroll to top)
+  const imageContainerRef = useRef(null);
+
+  useEffect(() => {
     if (imageRefs.current[selectedIndex]) {
       imageRefs.current[selectedIndex].scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
+    // Scroll the image container to the top when switching images
+    if (imageContainerRef.current) {
+      imageContainerRef.current.scrollTop = 0;
     }
   }, [selectedIndex]);
 
@@ -107,14 +114,14 @@ const PortfolioPopup = ({ isOpen, onClose }) => {
           </div>
         {/* Show only the selected image, always fill container */}
         <div className="flex flex-col items-center w-full">
-          <div className="w-full max-h-[70vh] overflow-y-auto flex justify-center items-start">
-                <img
-                  src={filteredImages[selectedIndex].image}
+          <div ref={imageContainerRef} className="w-full max-h-[70vh] overflow-y-auto flex justify-center items-start">
+            <img
+              src={filteredImages[selectedIndex].image}
               alt={filteredImages[selectedIndex].title}
               className="rounded-2xl border border-white/10 shadow-lg w-full object-contain"
               style={{ display: 'block' }}
-                />
-              </div>
+            />
+          </div>
           <div className="mt-4 text-lg font-semibold text-white text-center w-full">{filteredImages[selectedIndex].title}</div>
         </div>
       </div>

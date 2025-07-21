@@ -17,7 +17,8 @@ import {
   FaChartLine,
   FaUserShield,
   FaBars,
-  FaTimes
+  FaTimes,
+  FaWhatsapp
 } from 'react-icons/fa';
 import { IoRocketSharp } from 'react-icons/io5';
 import { RiMagicFill, RiSparklingFill } from 'react-icons/ri';
@@ -697,12 +698,15 @@ export default function Home() {
                 <IoRocketSharp className="w-6 h-6 ml-3 group-hover:animate-bounce" />
               </span>
             </button>
-            <button className="border-2 border-white/30 text-white px-12 py-6 rounded-full text-xl font-bold hover:bg-white/10 transition-all backdrop-blur-sm">
-              <span className="flex items-center justify-center">
-                <FaComments className="w-6 h-6 mr-3" />
-                Let&apos;s Chat First
-              </span>
-            </button>
+            <a
+              className="border-2 border-white/30 text-white px-12 py-6 rounded-full text-xl font-bold hover:bg-white/10 transition-all backdrop-blur-sm flex items-center justify-center"
+              href="https://wa.me/212709130391"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <FaComments className="w-6 h-6 mr-3" />
+              Let&apos;s Chat First
+            </a>
           </div>
         </div>
       </section>
@@ -727,7 +731,9 @@ export default function Home() {
                   </div>
                   <div>
                     <div className="font-semibold">Email Magic</div>
-                    <div className="text-purple-300">hello@codecraft.digital</div>
+                    <div className="text-purple-300">hello@InfinityScale.com</div>
+                    <div className="font-semibold mt-4">WhatsApp</div>
+                    <div className="text-green-300">+212709130391</div>
                   </div>
                 </div>
                 
@@ -787,6 +793,19 @@ export default function Home() {
       <OrderFormPopup isOpen={isOrderFormOpen} onClose={() => setIsOrderFormOpen(false)} />
       {/* Portfolio Popup */}
       <PortfolioPopup isOpen={isPortfolioOpen} onClose={() => setIsPortfolioOpen(false)} />
+
+      {/* Sticky WhatsApp Button */}
+      <a
+        href="https://wa.me/212709130391"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="fixed z-50 bottom-6 right-6 bg-green-500 hover:bg-green-600 text-white flex items-center gap-2 px-5 py-3 rounded-full shadow-lg shadow-green-500/30 transition-all duration-300 text-lg font-bold animate-bounce hover:animate-none"
+        style={{ boxShadow: '0 4px 24px 0 rgba(34,197,94,0.25)' }}
+        aria-label="Chat on WhatsApp"
+      >
+        <FaWhatsapp className="w-6 h-6" />
+        WhatsApp
+      </a>
     </div>
   );
-}
+} 
