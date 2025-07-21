@@ -1,4 +1,5 @@
-import { useState, useMemo, useRef } from 'react';
+'use client';
+import { useState, useMemo, useRef, useEffect } from 'react';
 import { ChevronLeft, ChevronRight, X } from 'lucide-react';
 
 const PortfolioPopup = ({ isOpen, onClose }) => {
